@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PraRoz - Web Design & Development</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #0a0e1a;
+      color: #fff;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* ── Hero Background ── */
+    .hero-section {
+      min-height: 100vh;
+      background:
+        linear-gradient(to bottom, rgba(5,10,30,0.55) 0%, rgba(5,10,30,0.3) 50%, rgba(5,10,30,0.7) 100%),
+        url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1600&q=80&fit=crop') center/cover no-repeat;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ── Navbar ── */
+    .site-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 48px;
+      background: rgba(0,0,0,0.5);
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .brand {
+      font-size: 1.7rem;
+      font-weight: 800;
+      color: #fff;
+      text-decoration: none;
+      letter-spacing: 0.5px;
+    }
+    .brand span { color: #f47920; }
+
+    .nav-links {
+      display: flex;
+      gap: 36px;
+      list-style: none;
+    }
+    .nav-links a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: #f47920; }
+
+    .search-bar {
+      display: flex;
+    }
+    .search-bar input {
+      background: rgba(255,255,255,0.12);
+      border: 1.5px solid rgba(255,255,255,0.3);
+      border-right: none;
+      color: #fff;
+      padding: 8px 18px;
+      font-size: 0.84rem;
+      border-radius: 4px 0 0 4px;
+      outline: none;
+      width: 200px;
+    }
+    .search-bar input::placeholder { color: rgba(255,255,255,0.6); }
+    .search-bar button {
+      background: #f47920;
+      border: none;
+      color: #fff;
+      padding: 8px 22px;
+      font-size: 0.84rem;
+      font-weight: 600;
+      border-radius: 0 4px 4px 0;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .search-bar button:hover { background: #d9640e; }
+
+    /* ── Hero Body ── */
+    .hero-body {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      padding: 60px 48px 80px;
+    }
+
+    .hero-text { max-width: 520px; }
+
+    .hero-text h1 {
+      font-size: 3.2rem;
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+    .hero-text h1 .orange { color: #f47920; }
+
+    .hero-text p {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.82);
+      line-height: 1.8;
+      margin-bottom: 34px;
+      max-width: 420px;
+    }
+
+    .btn-join {
+      background: #f47920;
+      color: #fff;
+      border: none;
+      padding: 14px 42px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      border-radius: 4px;
+      letter-spacing: 1px;
+      cursor: pointer;
+      transition: background 0.2s;
+      text-transform: uppercase;
+    }
+    .btn-join:hover { background: #d9640e; }
+
+    /* ── Login Card ── */
+    .login-card {
+      background: rgba(10, 10, 18, 0.88);
+      border-radius: 10px;
+      padding: 32px 36px 36px;
+      width: 320px;
+      flex-shrink: 0;
+      margin-left: auto;
+      backdrop-filter: blur(6px);
+    }
+
+    .login-card .card-title {
+      background: #fff;
+      color: #f47920;
+      font-size: 1.05rem;
+      font-weight: 700;
+      text-align: center;
+      padding: 12px;
+      border-radius: 6px;
+      margin-bottom: 28px;
+    }
+
+    .login-field {
+      margin-bottom: 20px;
+    }
+    .login-field input {
+      width: 100%;
+      background: transparent;
+      border: none;
+      border-bottom: 2px solid #f47920;
+      color: rgba(255,255,255,0.75);
+      font-size: 0.85rem;
+      padding: 8px 0;
+      outline: none;
+    }
+    .login-field input::placeholder { color: rgba(255,255,255,0.5); }
+
+    .btn-login {
+      width: 100%;
+      background: #f47920;
+      border: none;
+      color: #fff;
+      padding: 12px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.2s;
+      margin-bottom: 18px;
+    }
+    .btn-login:hover { background: #d9640e; }
+
+    .signup-text {
+      text-align: center;
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.75);
+      margin-bottom: 6px;
+    }
+    .signup-text a { color: #f47920; text-decoration: none; }
+
+    .login-with {
+      text-align: center;
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 14px;
+    }
+
+    .social-row {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+    }
+    .social-row a {
+      color: #fff;
+      font-size: 1.3rem;
+      transition: color 0.2s;
+    }
+    .social-row a:hover { color: #f47920; }
+
+    /* ── Responsive ── */
+    @media (max-width: 991px) {
+      .hero-body { flex-direction: column; align-items: flex-start; gap: 40px; padding: 40px 24px 60px; }
+      .login-card { margin-left: 0; width: 100%; max-width: 360px; }
+      .hero-text h1 { font-size: 2.2rem; }
+    }
+    @media (max-width: 767px) {
+      .site-nav { padding: 14px 20px; }
+      .nav-links { gap: 16px; }
+      .hero-text h1 { font-size: 1.8rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="hero-section">
+
+    <!-- Navbar -->
+    <nav class="site-nav">
+      <a href="#" class="brand">PraRoz<span>🌐</span></a>
+      <ul class="nav-links">
+        <li><a href="#">HOME</a></li>
+        <li><a href="#">ABOUT</a></li>
+        <li><a href="#">SERVICE</a></li>
+        <li><a href="#">DESIGN</a></li>
+        <li><a href="#">CONTACT</a></li>
+      </ul>
+      <div class="search-bar">
+        <input type="text" placeholder="Type to Search">
+        <button>Search</button>
+      </div>
+    </nav>
+
+    <!-- Hero Body -->
+    <div class="hero-body">
+      <div class="hero-text">
+        <h1>
+          Web Design &amp;<br>
+          <span class="orange">Development</span><br>
+          Course
+        </h1>
+        <p>Web Design is a specialisation of the design stream. They also use HTML, CSS, WYSIWYG editing software, mark up validators etc., to create design elements.</p>
+        <button class="btn-join">JOIN US</button>
+      </div>
+
+      <!-- Login Card -->
+      <div class="login-card">
+        <div class="card-title">Login Here</div>
+
+        <div class="login-field">
+          <input type="email" placeholder="Enter Email Here">
+        </div>
+        <div class="login-field">
+          <input type="password" placeholder="Enter Password Here">
+        </div>
+
+        <button class="btn-login">Login</button>
+
+        <p class="signup-text">Don't have an account? <a href="#">Sign up</a> here</p>
+        <p class="login-with">Log in with</p>
+        <div class="social-row">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-google"></i></a>
+          <a href="#"><i class="fab fa-skype"></i></a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

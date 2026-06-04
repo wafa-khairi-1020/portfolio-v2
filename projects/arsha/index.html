@@ -1,0 +1,2309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Arsha</title>
+
+  <!-- bootstrap css -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <!-- font awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <!-- google fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Jost:wght@400;500;600;700;900&display=swap" rel="stylesheet"/>
+
+  <style>
+
+    /* smooth scrolling - no js needed */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* ---- general ---- */
+    body {
+      font-family: 'Open Sans', sans-serif;
+      color: #444444;
+      margin: 0;
+    }
+
+    h1, h2, h3, h4, h5 {
+      font-family: 'Jost', sans-serif;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    /* section title */
+    .section-title {
+      text-align: center;
+      padding-bottom: 40px;
+    }
+
+    .section-title h2 {
+      font-size: 32px;
+      font-weight: 700;
+      color: #37517e;
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+      position: relative;
+    }
+
+    .section-title h2::before {
+      content: '';
+      position: absolute;
+      display: block;
+      width: 120px;
+      height: 1px;
+      background: #ddd;
+      bottom: 1px;
+      left: calc(50% - 60px);
+    }
+
+    .section-title h2::after {
+      content: '';
+      position: absolute;
+      display: block;
+      width: 40px;
+      height: 3px;
+      background: #47b2e4;
+      bottom: 0;
+      left: calc(50% - 20px);
+    }
+
+    .section-title p {
+      color: #777777;
+      margin: 0;
+    }
+
+    /* ============================
+       NAVBAR
+    ============================ */
+    .navbar {
+      background-color: #37517e;
+      padding: 14px 0;
+      transition: 0.4s;
+    }
+
+    .navbar-brand {
+      font-family: 'Jost', sans-serif;
+      font-size: 30px;
+      font-weight: 700;
+      color: #ffffff !important;
+      letter-spacing: 1px;
+    }
+
+    .navbar-nav .nav-link {
+      color: rgba(255, 255, 255, 0.7) !important;
+      padding: 5px 15px !important;
+      font-size: 15px;
+      font-weight: 500;
+      font-family: 'Jost', sans-serif;
+      transition: 0.3s;
+    }
+
+    .navbar-nav .nav-link:hover,
+    .navbar-nav .nav-link.active {
+      color: #ffffff !important;
+    }
+
+    .navbar .dropdown-menu {
+      background: #37517e;
+      border: none;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    }
+
+    .navbar .dropdown-item {
+      color: rgba(255,255,255,0.7);
+      font-size: 14px;
+      font-family: 'Jost', sans-serif;
+    }
+
+    .navbar .dropdown-item:hover {
+      background: rgba(255,255,255,0.1);
+      color: #fff;
+    }
+
+    .btn-getstarted {
+      background: #47b2e4;
+      color: #fff !important;
+      border-radius: 50px;
+      padding: 8px 25px !important;
+      font-size: 14px;
+      font-weight: 600;
+      margin-left: 15px;
+      transition: 0.3s;
+    }
+
+    .btn-getstarted:hover {
+      background: #209dd8;
+    }
+
+    .navbar-toggler {
+      border: 1px solid rgba(255,255,255,0.4);
+    }
+
+    .navbar-toggler-icon {
+      filter: invert(1);
+    }
+
+    /* ============================
+       HERO
+    ============================ */
+    #hero {
+      width: 100%;
+      min-height: 100vh;
+      background: linear-gradient(180deg, #37517e 0%, #2b4068 100%);
+      padding: 120px 0 60px;
+      display: flex;
+      align-items: center;
+    }
+
+    #hero h1 {
+      color: #fff;
+      font-size: 48px;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 0;
+    }
+
+    #hero h1 span {
+      color: #47b2e4;
+    }
+
+    #hero h2 {
+      color: rgba(255,255,255,0.6);
+      font-size: 20px;
+      font-weight: 400;
+      font-family: 'Open Sans', sans-serif;
+      margin: 18px 0 30px;
+    }
+
+    .hero-btns {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      flex-wrap: wrap;
+    }
+
+    .btn-hero {
+      background: #47b2e4;
+      color: #fff;
+      border-radius: 50px;
+      padding: 12px 32px;
+      font-size: 15px;
+      font-weight: 600;
+      font-family: 'Jost', sans-serif;
+      display: inline-block;
+      transition: 0.3s;
+    }
+
+    .btn-hero:hover {
+      background: #209dd8;
+      color: #fff;
+    }
+
+    .btn-watch {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: #fff;
+      font-family: 'Jost', sans-serif;
+      font-size: 15px;
+    }
+
+    .btn-watch .play-circle {
+      width: 55px;
+      height: 55px;
+      background: rgba(255,255,255,0.15);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 15px;
+      flex-shrink: 0;
+    }
+
+    #hero .hero-img img {
+      width: 100%;
+      max-width: 560px;
+      animation: float 4s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%   { transform: translateY(0px); }
+      50%  { transform: translateY(-15px); }
+      100% { transform: translateY(0px); }
+    }
+
+    /* ============================
+       CLIENTS
+    ============================ */
+    #clients {
+      background: #f3f5fa;
+      padding: 30px 0;
+    }
+
+    #clients .client-logo {
+      max-height: 50px;
+      filter: grayscale(100%);
+      opacity: 0.5;
+      transition: 0.3s;
+    }
+
+    #clients .client-logo:hover {
+      filter: none;
+      opacity: 1;
+    }
+
+    /* ============================
+       ABOUT
+    ============================ */
+    #about {
+      padding: 80px 0;
+      background: #fff;
+    }
+
+    #about img {
+      width: 100%;
+      border-radius: 6px;
+    }
+
+    #about h3 {
+      font-size: 28px;
+      font-weight: 700;
+      color: #37517e;
+      margin-bottom: 12px;
+    }
+
+    #about .italic-text {
+      color: #888;
+      font-style: italic;
+      font-size: 15px;
+      margin-bottom: 15px;
+    }
+
+    #about ul {
+      list-style: none;
+      padding: 0;
+      margin: 15px 0 20px;
+    }
+
+    #about ul li {
+      padding: 5px 0;
+      font-size: 15px;
+    }
+
+    #about ul li i {
+      color: #47b2e4;
+      margin-right: 8px;
+      font-size: 14px;
+    }
+
+    .btn-learn {
+      background: #47b2e4;
+      color: #fff;
+      border-radius: 50px;
+      padding: 10px 28px;
+      font-size: 14px;
+      font-weight: 600;
+      font-family: 'Jost', sans-serif;
+      display: inline-block;
+      transition: 0.3s;
+    }
+
+    .btn-learn:hover {
+      background: #209dd8;
+      color: #fff;
+    }
+
+    /* ============================
+       WHY US
+    ============================ */
+    #why-us {
+      padding: 80px 0;
+      background: #f3f5fa;
+    }
+
+    .why-box {
+      background: #47b2e4;
+      padding: 40px 35px;
+      border-radius: 6px;
+      color: #fff;
+      height: 100%;
+    }
+
+    .why-box h3 {
+      font-size: 24px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 12px;
+    }
+
+    .why-box p {
+      font-size: 14px;
+      color: rgba(255,255,255,0.9);
+      margin-bottom: 20px;
+    }
+
+    .why-box a {
+      background: rgba(255,255,255,0.25);
+      color: #fff;
+      border-radius: 50px;
+      padding: 8px 22px;
+      font-size: 13px;
+      font-weight: 600;
+      display: inline-block;
+      transition: 0.3s;
+    }
+
+    .why-box a:hover {
+      background: rgba(255,255,255,0.45);
+    }
+
+    #why-us .accordion-button {
+      font-size: 15px;
+      font-weight: 600;
+      color: #37517e;
+      background: #fff;
+    }
+
+    #why-us .accordion-button:not(.collapsed) {
+      background: #edf8fd;
+      color: #47b2e4;
+      box-shadow: none;
+    }
+
+    #why-us .accordion-button:focus {
+      box-shadow: none;
+    }
+
+    #why-us .accordion-item {
+      border: 1px solid #e1e8ef;
+      border-radius: 5px !important;
+      margin-bottom: 10px;
+      overflow: hidden;
+    }
+
+    #why-us .accordion-body {
+      font-size: 14px;
+      color: #777;
+      line-height: 1.7;
+    }
+
+    /* ============================
+       SKILLS
+    ============================ */
+    #skills {
+      padding: 80px 0;
+      background: linear-gradient(180deg, #37517e 0%, #2b4068 100%);
+    }
+
+    #skills h3 {
+      font-size: 28px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 12px;
+    }
+
+    #skills p {
+      color: rgba(255,255,255,0.7);
+      font-size: 15px;
+    }
+
+    .skill-item {
+      margin-bottom: 22px;
+    }
+
+    .skill-label {
+      display: flex;
+      justify-content: space-between;
+      color: #fff;
+      font-size: 14px;
+      margin-bottom: 6px;
+    }
+
+    .progress {
+      height: 10px;
+      border-radius: 50px;
+      background: rgba(255,255,255,0.12);
+    }
+
+    .progress-bar {
+      background: #47b2e4;
+      border-radius: 50px;
+    }
+
+    /* ============================
+       SERVICES
+    ============================ */
+    #services {
+      padding: 80px 0;
+      background: #fff;
+    }
+
+    .service-card {
+      background: #fff;
+      border-radius: 5px;
+      padding: 30px 25px;
+      box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+      height: 100%;
+      transition: 0.3s;
+    }
+
+    .service-card:hover {
+      box-shadow: 0 6px 25px rgba(0,0,0,0.14);
+      transform: translateY(-5px);
+    }
+
+    .service-card i {
+      font-size: 36px;
+      color: #47b2e4;
+      margin-bottom: 18px;
+      display: block;
+    }
+
+    .service-card h4 {
+      font-size: 18px;
+      font-weight: 700;
+      color: #37517e;
+      margin-bottom: 10px;
+    }
+
+    .service-card p {
+      font-size: 14px;
+      color: #777;
+      margin-bottom: 12px;
+    }
+
+    .service-card a {
+      color: #47b2e4;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .service-card a:hover {
+      color: #209dd8;
+    }
+
+    /* ============================
+       CTA
+    ============================ */
+    #cta {
+      padding: 80px 0;
+      background: linear-gradient(rgba(40,58,90,0.9), rgba(40,58,90,0.9)),
+        url('https://images.unsplash.com/photo-1552664730-d307ca884978?w=1400&q=80') center/cover;
+    }
+
+    #cta h3 {
+      color: #fff;
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    #cta p {
+      color: rgba(255,255,255,0.75);
+      font-size: 15px;
+      margin: 0;
+    }
+
+    .btn-cta {
+      background: #47b2e4;
+      color: #fff;
+      border-radius: 50px;
+      padding: 12px 38px;
+      font-size: 15px;
+      font-weight: 700;
+      font-family: 'Jost', sans-serif;
+      display: inline-block;
+      transition: 0.3s;
+      white-space: nowrap;
+    }
+
+    .btn-cta:hover {
+      background: #209dd8;
+      color: #fff;
+    }
+
+    /* ============================
+       FEATURES / TABS
+    ============================ */
+    #features {
+      padding: 80px 0;
+      background: #f3f5fa;
+    }
+
+    #features .nav-tabs {
+      border-bottom: 2px solid #dde3ec;
+      margin-bottom: 35px;
+    }
+
+    #features .nav-tabs .nav-link {
+      font-size: 15px;
+      font-weight: 600;
+      font-family: 'Jost', sans-serif;
+      color: #37517e;
+      border: none;
+      border-bottom: 3px solid transparent;
+      background: transparent;
+      padding: 10px 20px;
+      margin-bottom: -2px;
+    }
+
+    #features .nav-tabs .nav-link:hover {
+      color: #47b2e4;
+    }
+
+    #features .nav-tabs .nav-link.active {
+      color: #47b2e4;
+      border-bottom: 3px solid #47b2e4;
+      background: transparent;
+    }
+
+    #features .tab-img img {
+      width: 100%;
+      border-radius: 6px;
+      box-shadow: 0 3px 20px rgba(0,0,0,0.1);
+    }
+
+    #features .tab-pane h4 {
+      font-size: 22px;
+      font-weight: 700;
+      color: #37517e;
+      margin-bottom: 15px;
+    }
+
+    #features .tab-pane p {
+      font-size: 14px;
+      color: #777;
+      margin-bottom: 15px;
+    }
+
+    #features .tab-pane ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    #features .tab-pane ul li {
+      padding: 5px 0;
+      font-size: 14px;
+      color: #444;
+    }
+
+    #features .tab-pane ul li i {
+      color: #47b2e4;
+      margin-right: 8px;
+    }
+
+    /* ============================
+       PORTFOLIO
+    ============================ */
+    #portfolio {
+      padding: 80px 0;
+      background: #fff;
+    }
+
+    .portfolio-filters {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 35px;
+    }
+
+    .portfolio-filters button {
+      padding: 8px 22px;
+      font-size: 14px;
+      font-family: 'Jost', sans-serif;
+      font-weight: 500;
+      border: 1px solid #dde3ec;
+      border-radius: 50px;
+      background: #fff;
+      color: #444;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .portfolio-filters button.active,
+    .portfolio-filters button:hover {
+      background: #47b2e4;
+      color: #fff;
+      border-color: #47b2e4;
+    }
+
+    .portfolio-wrap {
+      position: relative;
+      overflow: hidden;
+      border-radius: 6px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+    }
+
+    .portfolio-wrap img {
+      width: 100%;
+      height: 210px;
+      object-fit: cover;
+      display: block;
+      transition: 0.4s;
+    }
+
+    .portfolio-wrap:hover img {
+      transform: scale(1.06);
+    }
+
+    .portfolio-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(71,178,228,0.88);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: 0.4s;
+      padding: 20px;
+    }
+
+    .portfolio-wrap:hover .portfolio-overlay {
+      opacity: 1;
+    }
+
+    .portfolio-overlay h4 {
+      color: #fff;
+      font-size: 17px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .portfolio-overlay p {
+      color: rgba(255,255,255,0.85);
+      font-size: 13px;
+      margin-bottom: 12px;
+    }
+
+    .portfolio-overlay .port-links a {
+      color: #fff;
+      font-size: 17px;
+      width: 38px;
+      height: 38px;
+      background: rgba(255,255,255,0.2);
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 4px;
+      transition: 0.3s;
+    }
+
+    .portfolio-overlay .port-links a:hover {
+      background: rgba(255,255,255,0.4);
+    }
+
+    /* ============================
+       TEAM
+    ============================ */
+    #team {
+      padding: 80px 0;
+      background: #f3f5fa;
+    }
+
+    .team-card {
+      background: #fff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: 0.3s;
+    }
+
+    .team-card:hover {
+      box-shadow: 0 6px 25px rgba(0,0,0,0.16);
+    }
+
+    .team-card img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      object-position: top center;
+    }
+
+    .team-card .member-info {
+      padding: 20px 15px 22px;
+    }
+
+    .team-card h4 {
+      font-size: 18px;
+      font-weight: 700;
+      color: #37517e;
+      margin-bottom: 5px;
+    }
+
+    .team-card span {
+      font-size: 13px;
+      color: #aaa;
+      display: block;
+      margin-bottom: 14px;
+    }
+
+    .team-social {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .team-social a {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: #f3f5fa;
+      color: #37517e;
+      font-size: 13px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: 0.3s;
+    }
+
+    .team-social a:hover {
+      background: #47b2e4;
+      color: #fff;
+    }
+
+    /* ============================
+       PRICING
+    ============================ */
+    #pricing {
+      padding: 80px 0;
+      background: #fff;
+    }
+
+    .pricing-toggle {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      margin-bottom: 40px;
+      font-family: 'Jost', sans-serif;
+      font-weight: 600;
+      color: #37517e;
+      font-size: 15px;
+    }
+
+    .form-check-input:checked {
+      background-color: #47b2e4;
+      border-color: #47b2e4;
+    }
+
+    .pricing-card {
+      background: #fff;
+      border: 1px solid #e8eef3;
+      border-radius: 8px;
+      padding: 40px 30px;
+      text-align: center;
+      box-shadow: 0 3px 20px rgba(0,0,0,0.07);
+      position: relative;
+      height: 100%;
+      transition: 0.3s;
+    }
+
+    .pricing-card:hover {
+      box-shadow: 0 8px 30px rgba(0,0,0,0.13);
+    }
+
+    .pricing-card.featured {
+      background: #37517e;
+      border-color: #37517e;
+    }
+
+    .pricing-card h3 {
+      font-size: 22px;
+      font-weight: 700;
+      color: #37517e;
+      margin-bottom: 8px;
+    }
+
+    .pricing-card.featured h3 {
+      color: #fff;
+    }
+
+    .pricing-card .plan-desc {
+      font-size: 14px;
+      color: #999;
+      margin-bottom: 20px;
+    }
+
+    .pricing-card.featured .plan-desc {
+      color: rgba(255,255,255,0.65);
+    }
+
+    .price-num {
+      font-family: 'Jost', sans-serif;
+      font-size: 54px;
+      font-weight: 700;
+      color: #37517e;
+      line-height: 1;
+      margin-bottom: 20px;
+    }
+
+    .pricing-card.featured .price-num {
+      color: #fff;
+    }
+
+    .price-num sup {
+      font-size: 22px;
+      font-weight: 500;
+      vertical-align: super;
+    }
+
+    .price-num small {
+      font-size: 14px;
+      font-weight: 400;
+      color: #999;
+    }
+
+    .pricing-card.featured .price-num small {
+      color: rgba(255,255,255,0.6);
+    }
+
+    .pricing-card ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 25px;
+    }
+
+    .pricing-card ul li {
+      padding: 10px 0;
+      font-size: 14px;
+      color: #555;
+      border-bottom: 1px solid #eee;
+    }
+
+    .pricing-card.featured ul li {
+      color: rgba(255,255,255,0.8);
+      border-bottom: 1px solid rgba(255,255,255,0.15);
+    }
+
+    .pricing-card ul li i {
+      margin-right: 6px;
+    }
+
+    .fa-check { color: #47b2e4; }
+    .fa-xmark  { color: #bbb; }
+
+    .btn-pricing {
+      background: #47b2e4;
+      color: #fff;
+      border: none;
+      border-radius: 50px;
+      padding: 11px 38px;
+      font-size: 14px;
+      font-weight: 600;
+      font-family: 'Jost', sans-serif;
+      cursor: pointer;
+      transition: 0.3s;
+      display: inline-block;
+    }
+
+    .btn-pricing:hover {
+      background: #209dd8;
+      color: #fff;
+    }
+
+    .badge-popular {
+      background: #47b2e4;
+      color: #fff;
+      font-size: 12px;
+      padding: 5px 14px;
+      border-radius: 50px;
+      position: absolute;
+      top: -13px;
+      right: 20px;
+      font-family: 'Jost', sans-serif;
+      font-weight: 600;
+    }
+
+    /* ============================
+       FAQ
+    ============================ */
+    #faq {
+      padding: 80px 0;
+      background: #f3f5fa;
+    }
+
+    #faq .accordion-button {
+      font-size: 15px;
+      font-weight: 600;
+      color: #37517e;
+      background: #fff;
+    }
+
+    #faq .accordion-button:not(.collapsed) {
+      background: #edf8fd;
+      color: #47b2e4;
+      box-shadow: none;
+    }
+
+    #faq .accordion-button:focus {
+      box-shadow: none;
+    }
+
+    #faq .accordion-item {
+      border: 1px solid #e0e8ef;
+      border-radius: 5px !important;
+      margin-bottom: 10px;
+      overflow: hidden;
+    }
+
+    #faq .accordion-body {
+      font-size: 14px;
+      color: #777;
+      line-height: 1.7;
+    }
+
+    #faq .faq-img img {
+      width: 100%;
+      border-radius: 6px;
+      box-shadow: 0 3px 20px rgba(0,0,0,0.1);
+    }
+
+    /* ============================
+       CONTACT
+    ============================ */
+    #contact {
+      padding: 80px 0;
+      background: #fff;
+    }
+
+    .info-box {
+      display: flex;
+      align-items: flex-start;
+      gap: 15px;
+      background: #f3f5fa;
+      border-radius: 6px;
+      padding: 24px 20px;
+    }
+
+    .info-box i {
+      font-size: 22px;
+      color: #47b2e4;
+      margin-top: 3px;
+      flex-shrink: 0;
+    }
+
+    .info-box h3 {
+      font-size: 16px;
+      font-weight: 700;
+      color: #37517e;
+      margin-bottom: 4px;
+    }
+
+    .info-box p {
+      font-size: 14px;
+      color: #777;
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 12px 15px;
+      border: 1px solid #dce1e7;
+      border-radius: 5px;
+      font-size: 14px;
+      font-family: 'Open Sans', sans-serif;
+      outline: none;
+      transition: border 0.3s;
+      margin-bottom: 15px;
+      color: #444;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border-color: #47b2e4;
+    }
+
+    .contact-form textarea {
+      height: 160px;
+      resize: vertical;
+    }
+
+    .btn-send {
+      background: #47b2e4;
+      color: #fff;
+      border: none;
+      border-radius: 50px;
+      padding: 12px 48px;
+      font-size: 15px;
+      font-weight: 600;
+      font-family: 'Jost', sans-serif;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .btn-send:hover {
+      background: #209dd8;
+    }
+
+    /* ============================
+       FOOTER
+    ============================ */
+    footer {
+      background: #37517e;
+    }
+
+    .footer-top {
+      padding: 60px 0 35px;
+    }
+
+    .footer-logo {
+      font-family: 'Jost', sans-serif;
+      font-size: 28px;
+      font-weight: 700;
+      color: #fff;
+      display: block;
+      margin-bottom: 15px;
+    }
+
+    .footer-top p {
+      font-size: 14px;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.8;
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .footer-social a {
+      width: 36px;
+      height: 36px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255,255,255,0.7);
+      font-size: 15px;
+      transition: 0.3s;
+    }
+
+    .footer-social a:hover {
+      background: #47b2e4;
+      color: #fff;
+    }
+
+    .footer-top h4 {
+      font-size: 17px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #47b2e4;
+      display: inline-block;
+    }
+
+    .footer-top ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footer-top ul li {
+      padding: 5px 0;
+    }
+
+    .footer-top ul li a {
+      color: rgba(255,255,255,0.65);
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: 0.3s;
+    }
+
+    .footer-top ul li a:hover {
+      color: #fff;
+      padding-left: 4px;
+    }
+
+    .footer-top ul li a i {
+      font-size: 10px;
+      color: #47b2e4;
+    }
+
+    .newsletter-form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 5px;
+    }
+
+    .newsletter-form p {
+      font-size: 14px;
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 5px;
+    }
+
+    .newsletter-form input {
+      padding: 10px 14px;
+      border: 1px solid rgba(255,255,255,0.2);
+      background: rgba(255,255,255,0.08);
+      border-radius: 5px;
+      color: #fff;
+      font-size: 14px;
+      outline: none;
+    }
+
+    .newsletter-form input::placeholder {
+      color: rgba(255,255,255,0.4);
+    }
+
+    .newsletter-form button {
+      background: #47b2e4;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      padding: 10px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .newsletter-form button:hover {
+      background: #209dd8;
+    }
+
+    .footer-bottom {
+      background: #2b4068;
+      padding: 22px 0;
+      text-align: center;
+      font-size: 13px;
+      color: rgba(255,255,255,0.6);
+    }
+
+    .footer-bottom span {
+      color: #47b2e4;
+    }
+
+    /* back to top - always visible, no js needed */
+    .back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 44px;
+      height: 44px;
+      background: #47b2e4;
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      z-index: 9999;
+      transition: 0.3s;
+    }
+
+    .back-to-top:hover {
+      background: #209dd8;
+      color: #fff;
+    }
+
+    /* ============================
+       PORTFOLIO FILTER - CSS only trick
+       using hidden radio buttons + labels
+    ============================ */
+    .filter-radio {
+      display: none;
+    }
+
+    .portfolio-filters label {
+      padding: 8px 22px;
+      font-size: 14px;
+      font-family: 'Jost', sans-serif;
+      font-weight: 500;
+      border: 1px solid #dde3ec;
+      border-radius: 50px;
+      background: #fff;
+      color: #444;
+      cursor: pointer;
+      transition: 0.3s;
+      display: inline-block;
+    }
+
+    .portfolio-filters label:hover {
+      background: #47b2e4;
+      color: #fff;
+      border-color: #47b2e4;
+    }
+
+    /* highlight the active filter label */
+    #filter-all:checked  ~ .portfolio-filters label[for="filter-all"],
+    #filter-app:checked  ~ .portfolio-filters label[for="filter-app"],
+    #filter-card:checked ~ .portfolio-filters label[for="filter-card"],
+    #filter-web:checked  ~ .portfolio-filters label[for="filter-web"] {
+      background: #47b2e4;
+      color: #fff;
+      border-color: #47b2e4;
+    }
+
+    /* hide items that don't match the selected filter */
+    #filter-app:checked  ~ .row .port-item:not(.port-app)  { display: none; }
+    #filter-card:checked ~ .row .port-item:not(.port-card) { display: none; }
+    #filter-web:checked  ~ .row .port-item:not(.port-web)  { display: none; }
+
+    /* ============================
+       PRICING TOGGLE - CSS only trick
+       using a hidden checkbox + label
+    ============================ */
+    .pricing-check {
+      display: none;
+    }
+
+    /* annual prices hidden by default */
+    .price-annual {
+      display: none;
+    }
+
+    /* custom toggle switch look */
+    .switch-label {
+      display: inline-block;
+      width: 46px;
+      height: 24px;
+      background: #ccc;
+      border-radius: 12px;
+      position: relative;
+      cursor: pointer;
+      transition: background 0.3s;
+      vertical-align: middle;
+    }
+
+    .switch-slider {
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      width: 18px;
+      height: 18px;
+      background: #fff;
+      border-radius: 50%;
+      transition: left 0.3s;
+    }
+
+    /* when checked - move slider right and turn blue */
+    #pricingSwitch:checked ~ .pricing-toggle .switch-label {
+      background: #47b2e4;
+    }
+
+    #pricingSwitch:checked ~ .pricing-toggle .switch-label .switch-slider {
+      left: 25px;
+    }
+
+    /* swap monthly/annual prices */
+    #pricingSwitch:checked ~ .row .price-monthly { display: none; }
+    #pricingSwitch:checked ~ .row .price-annual  { display: inline; }
+
+    /* responsive stuff */
+    @media (max-width: 991px) {
+      #hero h1 { font-size: 36px; }
+      #hero h2 { font-size: 17px; }
+      .navbar-nav { margin-top: 15px; }
+      .btn-getstarted { margin: 10px 0 0 0; display: inline-block; }
+    }
+
+    @media (max-width: 767px) {
+      #hero h1 { font-size: 30px; }
+      .hero-img { display: none; }
+      .section-title h2 { font-size: 26px; }
+    }
+
+  </style>
+</head>
+<body>
+
+<!-- ===========================
+     NAVBAR
+=========================== -->
+<nav class="navbar navbar-expand-lg fixed-top">
+  <div class="container">
+
+    <a class="navbar-brand" href="#">Arsha</a>
+
+    <button class="navbar-toggler" type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#mainNavbar"
+            aria-controls="mainNavbar"
+            aria-expanded="false"
+            aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="mainNavbar">
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item">
+          <a class="nav-link active" href="#hero">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#services">Services</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#portfolio">Portfolio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#team">Team</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Drop Down</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Drop Down 1</a></li>
+            <li><a class="dropdown-item" href="#">Drop Down 2</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Drop Down 3</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#contact">Contact</a>
+        </li>
+      </ul>
+      <a href="#" class="nav-link btn-getstarted">Get Started</a>
+    </div>
+
+  </div>
+</nav>
+
+
+<!-- ===========================
+     HERO
+=========================== -->
+<section id="hero">
+  <div class="container">
+    <div class="row align-items-center">
+
+      <div class="col-lg-6 col-md-12" style="margin-bottom: 30px;">
+        <h1>Better Solutions <br>For Your <span>Business</span></h1>
+        <h2>We are team of talented designers making websites with Bootstrap</h2>
+        <div class="hero-btns">
+          <a href="#about" class="btn-hero">Get Started</a>
+          <a href="#" class="btn-watch">
+            <span class="play-circle">
+              <i class="fa-solid fa-play fa-xs"></i>
+            </span>
+            Watch Video
+          </a>
+        </div>
+      </div>
+
+      <div class="col-lg-6 col-md-12 text-center hero-img">
+        <img src="https://bootstrapmade.com/demo/Arsha/assets/img/hero-img.png"
+             onerror="this.src='https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=560&q=80'; this.style.borderRadius='10px';"
+             alt="hero image">
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ===========================
+     CLIENTS
+=========================== -->
+<section id="clients">
+  <div class="container">
+    <div class="row align-items-center justify-content-around g-3 text-center">
+      <div class="col-4 col-md-2">
+        <!-- using text placeholders since client logos are on the demo server -->
+        <div style="font-family:'Jost',sans-serif; font-size:22px; font-weight:700; color:#aaa; letter-spacing:1px;">CLIENT</div>
+      </div>
+      <div class="col-4 col-md-2">
+        <div style="font-family:'Jost',sans-serif; font-size:22px; font-weight:700; color:#aaa; letter-spacing:1px;">BRAND</div>
+      </div>
+      <div class="col-4 col-md-2">
+        <div style="font-family:'Jost',sans-serif; font-size:22px; font-weight:700; color:#aaa; letter-spacing:1px;">PARTNER</div>
+      </div>
+      <div class="col-4 col-md-2">
+        <div style="font-family:'Jost',sans-serif; font-size:22px; font-weight:700; color:#aaa; letter-spacing:1px;">LOGO</div>
+      </div>
+      <div class="col-4 col-md-2">
+        <div style="font-family:'Jost',sans-serif; font-size:22px; font-weight:700; color:#aaa; letter-spacing:1px;">COMPANY</div>
+      </div>
+      <div class="col-4 col-md-2">
+        <div style="font-family:'Jost',sans-serif; font-size:22px; font-weight:700; color:#aaa; letter-spacing:1px;">CORP</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===========================
+     ABOUT
+=========================== -->
+<section id="about">
+  <div class="container">
+    <div class="row align-items-center gy-5">
+
+      <div class="col-lg-6">
+        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&q=80"
+             class="img-fluid shadow rounded"
+             alt="about us">
+      </div>
+
+      <div class="col-lg-6 ps-lg-5">
+        <h3>Learn More About Us</h3>
+        <p class="italic-text">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </p>
+        <ul>
+          <li><i class="fa-solid fa-check-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
+          <li><i class="fa-solid fa-check-circle"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
+          <li><i class="fa-solid fa-check-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
+        </ul>
+        <p style="font-size:15px; color:#777;">
+          Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+        </p>
+        <a href="#" class="btn-learn">Learn More</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ===========================
+     WHY US
+=========================== -->
+<section id="why-us">
+  <div class="container">
+
+    <div class="section-title">
+      <h2>Why Us?</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </div>
+
+    <div class="row gy-4 align-items-start">
+
+      <div class="col-lg-4">
+        <div class="why-box">
+          <h3>Why choose our company?</h3>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </p>
+          <a href="#">Learn More <i class="fa-solid fa-chevron-right fa-xs ms-1"></i></a>
+        </div>
+      </div>
+
+      <div class="col-lg-8">
+        <div class="accordion" id="whyUsAccordion">
+
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#whyOne">
+                Lorem ipsum dolor sit amet consectetur adipiscing elit
+              </button>
+            </h2>
+            <div id="whyOne" class="accordion-collapse collapse show" data-bs-parent="#whyUsAccordion">
+              <div class="accordion-body">
+                Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non curabitur gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item mt-2">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#whyTwo">
+                Feugiat scelerisque varius morbi enim nunc faucibus a pellentesque
+              </button>
+            </h2>
+            <div id="whyTwo" class="accordion-collapse collapse" data-bs-parent="#whyUsAccordion">
+              <div class="accordion-body">
+                Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item mt-2">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#whyThree">
+                Dolor sit amet consectetur adipiscing elit ut aliquam purus
+              </button>
+            </h2>
+            <div id="whyThree" class="accordion-collapse collapse" data-bs-parent="#whyUsAccordion">
+              <div class="accordion-body">
+                Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus pulvinar elementum integer enim. Sem nulla pharetra diam sit amet nisl suscipit.
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ===========================
+     SKILLS
+=========================== -->
+<section id="skills">
+  <div class="container">
+    <div class="row gy-5 align-items-center">
+
+      <div class="col-lg-6">
+        <h3>A few words about us</h3>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Proin nibh nisl condimentum id venenatis a condimentum vitae sapien.
+        </p>
+      </div>
+
+      <div class="col-lg-6">
+
+        <div class="skill-item">
+          <div class="skill-label"><span>HTML</span><span>100%</span></div>
+          <div class="progress"><div class="progress-bar" style="width:100%"></div></div>
+        </div>
+
+        <div class="skill-item">
+          <div class="skill-label"><span>CSS</span><span>90%</span></div>
+          <div class="progress"><div class="progress-bar" style="width:90%"></div></div>
+        </div>
+
+        <div class="skill-item">
+          <div class="skill-label"><span>JavaScript</span><span>75%</span></div>
+          <div class="progress"><div class="progress-bar" style="width:75%"></div></div>
+        </div>
+
+        <div class="skill-item">
+          <div class="skill-label"><span>Photoshop</span><span>55%</span></div>
+          <div class="progress"><div class="progress-bar" style="width:55%"></div></div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===========================
+     SERVICES
+=========================== -->
+<section id="services">
+  <div class="container">
+
+    <div class="section-title">
+      <h2>Services</h2>
+      <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem.</p>
+    </div>
+
+    <div class="row g-4">
+
+      <div class="col-lg-4 col-md-6">
+        <div class="service-card">
+          <i class="fa-solid fa-chart-bar"></i>
+          <h4>Eosle Commodi</h4>
+          <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati.</p>
+          <a href="#">Read More <i class="fa-solid fa-arrow-right fa-xs ms-1"></i></a>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6">
+        <div class="service-card">
+          <i class="fa-solid fa-photo-film"></i>
+          <h4>Asperiores Commodi</h4>
+          <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati.</p>
+          <a href="#">Read More <i class="fa-solid fa-arrow-right fa-xs ms-1"></i></a>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6">
+        <div class="service-card">
+          <i class="fa-solid fa-fingerprint"></i>
+          <h4>Velit Doloremque</h4>
+          <p>Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit.</p>
+          <a href="#">Read More <i class="fa-solid fa-arrow-right fa-xs ms-1"></i></a>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6">
+        <div class="service-card">
+          <i class="fa-solid fa-globe"></i>
+          <h4>Dolori nihil quae</h4>
+          <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati.</p>
+          <a href="#">Read More <i class="fa-solid fa-arrow-right fa-xs ms-1"></i></a>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6">
+        <div class="service-card">
+          <i class="fa-solid fa-calendar-check"></i>
+          <h4>Asperiores Commodi</h4>
+          <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati.</p>
+          <a href="#">Read More <i class="fa-solid fa-arrow-right fa-xs ms-1"></i></a>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6">
+        <div class="service-card">
+          <i class="fa-solid fa-chart-pie"></i>
+          <h4>Dolori nihil quae</h4>
+          <p>Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit.</p>
+          <a href="#">Read More <i class="fa-solid fa-arrow-right fa-xs ms-1"></i></a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ===========================
+     CTA
+=========================== -->
+<section id="cta">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-9">
+        <h3>Call To Action</h3>
+        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident sunt in culpa.</p>
+      </div>
+      <div class="col-lg-3 text-lg-end mt-4 mt-lg-0">
+        <a href="#" class="btn-cta">Call To Action</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===========================
+     FEATURES TABS
+=========================== -->
+<section id="features">
+  <div class="container">
+
+    <div class="section-title">
+      <h2>Features</h2>
+      <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem.</p>
+    </div>
+
+    <ul class="nav nav-tabs" id="featureTabs">
+      <li class="nav-item">
+        <a class="nav-link active" data-bs-toggle="tab" href="#tab1">Modi sit est</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-bs-toggle="tab" href="#tab2">Unde praesentium</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-bs-toggle="tab" href="#tab3">Pariatur explicabo</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-bs-toggle="tab" href="#tab4">Nostrum qui quasi</a>
+      </li>
+    </ul>
+
+    <div class="tab-content mt-4">
+
+      <div class="tab-pane fade show active" id="tab1">
+        <div class="row gy-4 align-items-center">
+          <div class="col-lg-6 tab-img">
+            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80"
+                 alt="feature 1">
+          </div>
+          <div class="col-lg-6">
+            <h4>Quis blanditiis praesentium voluptatum</h4>
+            <p>Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate.</p>
+            <ul>
+              <li><i class="fa-solid fa-check"></i> Ullamco laboris nisi ut aliquip ex ea commodo</li>
+              <li><i class="fa-solid fa-check"></i> Duis aute irure dolor in reprehenderit in voluptate</li>
+              <li><i class="fa-solid fa-check"></i> Provident mollitia neque rerum asperiores dolores</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-pane fade" id="tab2">
+        <div class="row gy-4 align-items-center">
+          <div class="col-lg-6 tab-img">
+            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80"
+                 alt="feature 2">
+          </div>
+          <div class="col-lg-6">
+            <h4>Unde praesentium voluptatum atque corrupti</h4>
+            <p>Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate.</p>
+            <ul>
+              <li><i class="fa-solid fa-check"></i> Ullamco laboris nisi ut aliquip ex ea commodo</li>
+              <li><i class="fa-solid fa-check"></i> Duis aute irure dolor in reprehenderit in voluptate</li>
+              <li><i class="fa-solid fa-check"></i> Provident mollitia neque rerum asperiores dolores</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-pane fade" id="tab3">
+        <div class="row gy-4 align-items-center">
+          <div class="col-lg-6 tab-img">
+            <img src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=600&q=80"
+                 alt="feature 3">
+          </div>
+          <div class="col-lg-6">
+            <h4>Pariatur explicabo voluptatem rem asperiores</h4>
+            <p>Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate.</p>
+            <ul>
+              <li><i class="fa-solid fa-check"></i> Ullamco laboris nisi ut aliquip ex ea commodo</li>
+              <li><i class="fa-solid fa-check"></i> Duis aute irure dolor in reprehenderit in voluptate</li>
+              <li><i class="fa-solid fa-check"></i> Provident mollitia neque rerum asperiores dolores</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-pane fade" id="tab4">
+        <div class="row gy-4 align-items-center">
+          <div class="col-lg-6 tab-img">
+            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&q=80"
+                 alt="feature 4">
+          </div>
+          <div class="col-lg-6">
+            <h4>Nostrum qui blanditiis voluptatum delenit</h4>
+            <p>Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate.</p>
+            <ul>
+              <li><i class="fa-solid fa-check"></i> Ullamco laboris nisi ut aliquip ex ea commodo</li>
+              <li><i class="fa-solid fa-check"></i> Duis aute irure dolor in reprehenderit in voluptate</li>
+              <li><i class="fa-solid fa-check"></i> Provident mollitia neque rerum asperiores dolores</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ===========================
+     PORTFOLIO
+=========================== -->
+<section id="portfolio">
+  <div class="container">
+
+    <div class="section-title">
+      <h2>Portfolio</h2>
+      <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem.</p>
+    </div>
+
+    <!-- hidden radio inputs must come BEFORE the labels and grid for CSS ~ selector to work -->
+    <input type="radio" id="filter-all"  name="pf" class="filter-radio" checked>
+    <input type="radio" id="filter-app"  name="pf" class="filter-radio">
+    <input type="radio" id="filter-card" name="pf" class="filter-radio">
+    <input type="radio" id="filter-web"  name="pf" class="filter-radio">
+
+    <div class="portfolio-filters">
+      <label for="filter-all">All</label>
+      <label for="filter-app">App</label>
+      <label for="filter-card">Card</label>
+      <label for="filter-web">Web</label>
+    </div>
+
+    <div class="row g-4">
+
+      <div class="col-lg-4 col-md-6 port-item port-app">
+        <div class="portfolio-wrap">
+          <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=400&q=80" alt="App 1">
+          <div class="portfolio-overlay">
+            <h4>App 1</h4>
+            <p>App</p>
+            <div class="port-links">
+              <a href="#"><i class="fa-solid fa-link"></i></a>
+              <a href="#"><i class="fa-solid fa-magnifying-glass-plus"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 port-item port-web">
+        <div class="portfolio-wrap">
+          <img src="https://images.unsplash.com/photo-1517292987719-0369a794ec0f?w=400&q=80" alt="Web 3">
+          <div class="portfolio-overlay">
+            <h4>Web 3</h4>
+            <p>Web</p>
+            <div class="port-links">
+              <a href="#"><i class="fa-solid fa-link"></i></a>
+              <a href="#"><i class="fa-solid fa-magnifying-glass-plus"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 port-item port-app">
+        <div class="portfolio-wrap">
+          <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=400&q=80" alt="App 2">
+          <div class="portfolio-overlay">
+            <h4>App 2</h4>
+            <p>App</p>
+            <div class="port-links">
+              <a href="#"><i class="fa-solid fa-link"></i></a>
+              <a href="#"><i class="fa-solid fa-magnifying-glass-plus"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 port-item port-card">
+        <div class="portfolio-wrap">
+          <img src="https://images.unsplash.com/photo-1522542550221-31fd19575a2d?w=400&q=80" alt="Card 2">
+          <div class="portfolio-overlay">
+            <h4>Card 2</h4>
+            <p>Card</p>
+            <div class="port-links">
+              <a href="#"><i class="fa-solid fa-link"></i></a>
+              <a href="#"><i class="fa-solid fa-magnifying-glass-plus"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 port-item port-web">
+        <div class="portfolio-wrap">
+          <img src="https://images.unsplash.com/photo-1432888622747-4eb9a8f5f989?w=400&q=80" alt="Web 2">
+          <div class="portfolio-overlay">
+            <h4>Web 2</h4>
+            <p>Web</p>
+            <div class="port-links">
+              <a href="#"><i class="fa-solid fa-link"></i></a>
+              <a href="#"><i class="fa-solid fa-magnifying-glass-plus"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 port-item port-card">
+        <div class="portfolio-wrap">
+          <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=400&q=80" alt="Card 3">
+          <div class="portfolio-overlay">
+            <h4>Card 3</h4>
+            <p>Card</p>
+            <div class="port-links">
+              <a href="#"><i class="fa-solid fa-link"></i></a>
+              <a href="#"><i class="fa-solid fa-magnifying-glass-plus"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ===========================
+     TEAM
+=========================== -->
+<section id="team">
+  <div class="container">
+
+    <div class="section-title">
+      <h2>Team</h2>
+      <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem.</p>
+    </div>
+
+    <div class="row g-4">
+
+      <div class="col-lg-3 col-md-6">
+        <div class="team-card">
+          <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Walter White">
+          <div class="member-info">
+            <h4>Walter White</h4>
+            <span>Chief Executive Officer</span>
+            <div class="team-social">
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6">
+        <div class="team-card">
+          <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah Johnson">
+          <div class="member-info">
+            <h4>Sarah Johnson</h4>
+            <span>Product Manager</span>
+            <div class="team-social">
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6">
+        <div class="team-card">
+          <img src="https://randomuser.me/api/portraits/men/56.jpg" alt="William Anderson">
+          <div class="member-info">
+            <h4>William Anderson</h4>
+            <span>CTO</span>
+            <div class="team-social">
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6">
+        <div class="team-card">
+          <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Amanda Jepson">
+          <div class="member-info">
+            <h4>Amanda Jepson</h4>
+            <span>Accountant</span>
+            <div class="team-social">
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ===========================
+     PRICING
+=========================== -->
+<section id="pricing">
+  <div class="container">
+
+    <div class="section-title">
+      <h2>Pricing</h2>
+      <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem.</p>
+    </div>
+
+    <!-- hidden checkbox must be BEFORE the toggle and cards for CSS ~ selector -->
+    <input type="checkbox" id="pricingSwitch" class="pricing-check">
+
+    <div class="pricing-toggle">
+      <span>Monthly</span>
+      <label for="pricingSwitch" class="switch-label">
+        <span class="switch-slider"></span>
+      </label>
+      <span>Annual</span>
+    </div>
+
+    <div class="row g-4 justify-content-center">
+
+      <!-- Free -->
+      <div class="col-lg-4 col-md-6">
+        <div class="pricing-card">
+          <h3>Free Plan</h3>
+          <div class="plan-desc">Best for small businesses</div>
+          <div class="price-num">
+            <sup>$</sup><span class="price-monthly">0</span><span class="price-annual">0</span><small>/mo</small>
+          </div>
+          <ul>
+            <li><i class="fa-solid fa-check"></i> Aida dere</li>
+            <li><i class="fa-solid fa-check"></i> Nec feugiat nisl</li>
+            <li><i class="fa-solid fa-check"></i> Nulla at volutpat dola</li>
+            <li><i class="fa-solid fa-xmark"></i> Pharetra massa</li>
+            <li><i class="fa-solid fa-xmark"></i> Massa ultricies mi</li>
+          </ul>
+          <a href="#" class="btn-pricing">Get Started</a>
+        </div>
+      </div>
+
+      <!-- Business (featured) -->
+      <div class="col-lg-4 col-md-6">
+        <div class="pricing-card featured">
+          <span class="badge-popular">Most Popular</span>
+          <h3>Business Plan</h3>
+          <div class="plan-desc">Best for growing companies</div>
+          <div class="price-num">
+            <sup>$</sup><span class="price-monthly">29</span><span class="price-annual">19</span><small>/mo</small>
+          </div>
+          <ul>
+            <li><i class="fa-solid fa-check"></i> Aida dere</li>
+            <li><i class="fa-solid fa-check"></i> Nec feugiat nisl</li>
+            <li><i class="fa-solid fa-check"></i> Nulla at volutpat dola</li>
+            <li><i class="fa-solid fa-check"></i> Pharetra massa</li>
+            <li><i class="fa-solid fa-xmark"></i> Massa ultricies mi</li>
+          </ul>
+          <a href="#" class="btn-pricing">Get Started</a>
+        </div>
+      </div>
+
+      <!-- Developer -->
+      <div class="col-lg-4 col-md-6">
+        <div class="pricing-card">
+          <h3>Developer Plan</h3>
+          <div class="plan-desc">Best for large enterprises</div>
+          <div class="price-num">
+            <sup>$</sup><span class="price-monthly">49</span><span class="price-annual">39</span><small>/mo</small>
+          </div>
+          <ul>
+            <li><i class="fa-solid fa-check"></i> Aida dere</li>
+            <li><i class="fa-solid fa-check"></i> Nec feugiat nisl</li>
+            <li><i class="fa-solid fa-check"></i> Nulla at volutpat dola</li>
+            <li><i class="fa-solid fa-check"></i> Pharetra massa</li>
+            <li><i class="fa-solid fa-check"></i> Massa ultricies mi</li>
+          </ul>
+          <a href="#" class="btn-pricing">Get Started</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ===========================
+     FAQ
+=========================== -->
+<section id="faq">
+  <div class="container">
+
+    <div class="section-title">
+      <h2>Frequently Asked Questions</h2>
+      <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem.</p>
+    </div>
+
+    <div class="row gy-4 align-items-center">
+
+      <div class="col-lg-5">
+        <div class="faq-img">
+          <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&q=80"
+               alt="faq image">
+        </div>
+      </div>
+
+      <div class="col-lg-7">
+        <div class="accordion" id="faqAccordion">
+
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                Non consectetur a erat nam at lectus urna duis?
+              </button>
+            </h2>
+            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non curabitur gravida. Venenatis lectus magna fringilla urna porttitor rhoncus.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item mt-2">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq2">
+                Feugiat scelerisque varius morbi enim nunc faucibus?
+              </button>
+            </h2>
+            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item mt-2">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq3">
+                Dolor sit amet consectetur adipiscing elit pellentesque?
+              </button>
+            </h2>
+            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus pulvinar elementum integer enim.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item mt-2">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq4">
+                Ac odio tempor orci dapibus. Aliquam eleifend mi in nulla?
+              </button>
+            </h2>
+            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item mt-2">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq5">
+                Tempus quam pellentesque nec nam aliquam sem et tortor?
+              </button>
+            </h2>
+            <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                Molestie a iaculis at erat pellentesque adipiscing commodo. Dignissim suspendisse in est ante in nibh mauris cursus mattis.
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===========================
+     CONTACT
+=========================== -->
+<section id="contact">
+  <div class="container">
+
+    <div class="section-title">
+      <h2>Contact</h2>
+      <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem.</p>
+    </div>
+
+    <div class="row gy-4">
+
+      <!-- info boxes left -->
+      <div class="col-lg-5 d-flex flex-column gap-3">
+
+        <div class="info-box">
+          <i class="fa-solid fa-location-dot"></i>
+          <div>
+            <h3>Our Address</h3>
+            <p>A108 Adam Street, New York, NY 535022</p>
+          </div>
+        </div>
+
+        <div class="info-box">
+          <i class="fa-solid fa-envelope"></i>
+          <div>
+            <h3>Email Us</h3>
+            <p>info@example.com<br>contact@example.com</p>
+          </div>
+        </div>
+
+        <div class="info-box">
+          <i class="fa-solid fa-phone"></i>
+          <div>
+            <h3>Call Us</h3>
+            <p>+1 5589 55488 55<br>+1 6678 254445 41</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- form right -->
+      <div class="col-lg-7">
+        <div class="contact-form">
+          <div class="row">
+            <div class="col-md-6">
+              <input type="text" placeholder="Your Name">
+            </div>
+            <div class="col-md-6">
+              <input type="email" placeholder="Your Email">
+            </div>
+          </div>
+          <input type="text" placeholder="Subject">
+          <textarea placeholder="Message"></textarea>
+          <div class="text-center">
+            <button class="btn-send">Send Message</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ===========================
+     FOOTER
+=========================== -->
+<footer>
+  <div class="footer-top">
+    <div class="container">
+      <div class="row gy-5">
+
+        <div class="col-lg-3 col-md-6">
+          <a href="#" class="footer-logo">Arsha</a>
+          <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare.</p>
+          <div class="footer-social">
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <h4>Useful Links</h4>
+          <ul>
+            <li><a href="#"><i class="fa-solid fa-chevron-right"></i> Home</a></li>
+            <li><a href="#"><i class="fa-solid fa-chevron-right"></i> About us</a></li>
+            <li><a href="#"><i class="fa-solid fa-chevron-right"></i> Services</a></li>
+            <li><a href="#"><i class="fa-solid fa-chevron-right"></i> Terms of service</a></li>
+            <li><a href="#"><i class="fa-solid fa-chevron-right"></i> Privacy policy</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <h4>Our Services</h4>
+          <ul>
+            <li><a href="#"><i class="fa-solid fa-chevron-right"></i> Web Design</a></li>
+            <li><a href="#"><i class="fa-solid fa-chevron-right"></i> Web Development</a></li>
+            <li><a href="#"><i class="fa-solid fa-chevron-right"></i> Product Management</a></li>
+            <li><a href="#"><i class="fa-solid fa-chevron-right"></i> Marketing</a></li>
+            <li><a href="#"><i class="fa-solid fa-chevron-right"></i> Graphic Design</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <h4>Join Our Newsletter</h4>
+          <div class="newsletter-form">
+            <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna.</p>
+            <input type="email" placeholder="Enter your email">
+            <button>Subscribe</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="container">
+      <p class="mb-0">&copy; 2024 <span>Arsha</span>. All Rights Reserved. Designed by <span>BootstrapMade</span></p>
+    </div>
+  </div>
+</footer>
+
+<!-- back to top button -->
+<a href="#hero" class="back-to-top" id="backToTop">
+  <i class="fa-solid fa-chevron-up"></i>
+</a>
+
+
+<!-- bootstrap js (only needed for navbar toggle, accordion, and tabs) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- no custom js needed! everything else is done with css -->
+<!-- smooth scroll = html { scroll-behavior: smooth } in css -->
+<!-- portfolio filter = hidden radio inputs + css ~ selector -->
+<!-- pricing toggle = hidden checkbox + css ~ selector -->
+<!-- back to top = always visible via css -->
+
+
+</body>
+</html>

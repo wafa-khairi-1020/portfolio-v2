@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Creativity without Compromise</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      background-color: #ddd;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      padding: 40px 20px;
+    }
+
+    /* ── Outer Card ── */
+    .section-card {
+      display: flex;
+      width: 860px;
+      max-width: 100%;
+      min-height: 420px;
+      border-radius: 4px;
+      overflow: hidden;
+      box-shadow: 0 6px 30px rgba(0,0,0,0.18);
+    }
+
+    /* ══ LEFT PANEL ══ */
+    .left-panel {
+      width: 300px;
+      flex-shrink: 0;
+      background-color: #2b2d3a;
+      padding: 50px 36px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .left-panel h2 {
+      font-size: 1.85rem;
+      font-weight: 300;
+      color: #fff;
+      line-height: 1.3;
+      margin-bottom: 20px;
+    }
+
+    .left-panel p {
+      font-size: 0.8rem;
+      color: #a8aab8;
+      line-height: 1.7;
+      margin-bottom: 28px;
+    }
+
+    .btn-readmore {
+      display: inline-block;
+      width: fit-content;
+      background: transparent;
+      color: #d4b84a;
+      border: 1.5px solid #d4b84a;
+      font-size: 0.8rem;
+      font-weight: 500;
+      padding: 8px 22px;
+      letter-spacing: 0.5px;
+      text-decoration: none;
+      transition: background 0.2s, color 0.2s;
+    }
+    .btn-readmore:hover {
+      background-color: #d4b84a;
+      color: #2b2d3a;
+    }
+
+    /* ══ RIGHT PANEL ══ */
+    .right-panel {
+      flex: 1;
+      background-color: #fff;
+      padding: 44px 36px;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 36px 30px;
+    }
+
+    /* ── Feature Item ── */
+    .feature-item { text-align: center; }
+
+    .feature-icon-wrap {
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      border: 2px solid #d4b84a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 16px;
+      color: #d4b84a;
+      font-size: 1.3rem;
+    }
+
+    .feature-title {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      color: #333;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .feature-desc {
+      font-size: 0.78rem;
+      color: #888;
+      line-height: 1.7;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="section-card">
+
+    <!-- LEFT -->
+    <div class="left-panel">
+      <h2>Creativity without Compromise</h2>
+      <p>The world's smallest detachable for business1 gives you a pure tablet experience with the power to handle your professional apps.</p>
+      <a href="#" class="btn-readmore">read more</a>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="right-panel">
+      <div class="features-grid">
+
+        <!-- Power to Perform -->
+        <div class="feature-item">
+          <div class="feature-icon-wrap">
+            <i class="fa-solid fa-bolt"></i>
+          </div>
+          <div class="feature-title">Power to Perform</div>
+          <p class="feature-desc">Optional 8th Gen Intel® Core™ vPro™ processors.3. Lolor sit amet, consectetur adipiscing elit nullam nunc justo sagittis suscipit ultrices.</p>
+        </div>
+
+        <!-- Keyboard -->
+        <div class="feature-item">
+          <div class="feature-icon-wrap">
+            <i class="fa-solid fa-keyboard"></i>
+          </div>
+          <div class="feature-title">Keyboard</div>
+          <p class="feature-desc">Collaborate easily using quick launch shortcut buttons. Lolor sit amet, consectetur adipiscing elit nullam nunc justo sagittis suscipit ultrices.</p>
+        </div>
+
+        <!-- HP Sure View -->
+        <div class="feature-item">
+          <div class="feature-icon-wrap">
+            <i class="fa-solid fa-display"></i>
+          </div>
+          <div class="feature-title">HP Sure View</div>
+          <p class="feature-desc">The world's first detachable PC with an integrated privacy screen.4. Lolor sit amet, consectetur adipiscing elit nullam nunc justo sagittis suscipit ultrices.</p>
+        </div>
+
+        <!-- Fast Battery -->
+        <div class="feature-item">
+          <div class="feature-icon-wrap">
+            <i class="fa-solid fa-battery-full"></i>
+          </div>
+          <div class="feature-title">Fast Battery</div>
+          <p class="feature-desc">HP Fast Charge will get up to 50% battery life in just 30 minutes of charging.13. Lolor sit amet, consectetur adipiscing elit nullam nunc justo sagitti</p>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

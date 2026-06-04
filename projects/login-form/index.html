@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Form</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f0d5d5;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 30px 20px;
+    }
+
+    /* ── Card ── */
+    .card-wrap {
+      display: flex;
+      width: 720px;
+      max-width: 100%;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 16px 48px rgba(0,0,0,0.16);
+    }
+
+    /* ══ LEFT PANEL ══ */
+    .left-panel {
+      flex: 1;
+      background: #fff;
+      padding: 48px 44px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .left-panel h2 {
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: #222;
+      margin-bottom: 28px;
+      align-self: flex-start;
+    }
+
+    /* Social icon circles */
+    .social-circles {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+    .social-circle {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      border: 1.5px solid #ddd;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #333;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .social-circle:hover {
+      background: #e74c4c;
+      border-color: #e74c4c;
+      color: #fff;
+    }
+
+    .or-text {
+      font-size: 0.8rem;
+      color: #999;
+      margin-bottom: 22px;
+    }
+
+    /* Inputs */
+    .input-field {
+      width: 100%;
+      background: #f2f2f2;
+      border: none;
+      border-radius: 4px;
+      padding: 13px 16px;
+      font-size: 0.87rem;
+      color: #555;
+      margin-bottom: 14px;
+      outline: none;
+      font-family: 'Poppins', sans-serif;
+      transition: background 0.2s;
+    }
+    .input-field:focus { background: #ebebeb; }
+    .input-field::placeholder { color: #aaa; }
+
+    .forgot-link {
+      align-self: flex-end;
+      font-size: 0.78rem;
+      color: #888;
+      text-decoration: none;
+      margin-bottom: 26px;
+      transition: color 0.2s;
+    }
+    .forgot-link:hover { color: #e74c4c; }
+
+    .btn-login {
+      width: 100%;
+      background: #e74c4c;
+      color: #fff;
+      border: none;
+      padding: 13px;
+      border-radius: 50px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .btn-login:hover { background: #c0392b; }
+
+    /* ══ RIGHT PANEL ══ */
+    .right-panel {
+      width: 300px;
+      flex-shrink: 0;
+      background: linear-gradient(145deg, #e74c4c, #ff6b7a);
+      padding: 48px 36px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
+    }
+
+    .right-panel h2 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      line-height: 1.3;
+      margin-bottom: 20px;
+    }
+
+    .right-panel p {
+      font-size: 0.85rem;
+      line-height: 1.8;
+      opacity: 0.9;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 640px) {
+      .card-wrap { flex-direction: column; }
+      .right-panel { width: 100%; padding: 36px 30px; }
+      .left-panel { padding: 36px 28px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card-wrap">
+
+    <!-- LEFT: Login Form -->
+    <div class="left-panel">
+      <h2>Login</h2>
+
+      <div class="social-circles">
+        <a href="#" class="social-circle"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="social-circle"><i class="fab fa-twitter"></i></a>
+      </div>
+
+      <p class="or-text">or use your account</p>
+
+      <input type="email"    class="input-field" placeholder="Email">
+      <input type="password" class="input-field" placeholder="Password">
+
+      <a href="#" class="forgot-link">Forgot your password?</a>
+
+      <button class="btn-login">Log In</button>
+    </div>
+
+    <!-- RIGHT: Info Panel -->
+    <div class="right-panel">
+      <h2>HTML CSS Login Form</h2>
+      <p>This login form is created using pure HTML and CSS. For social icons, FontAwesome is used.</p>
+    </div>
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

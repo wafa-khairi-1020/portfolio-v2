@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing Plans</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f5f6fa;
+            font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+        }
+
+        .pricing-card {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+            overflow: hidden;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-body-custom {
+            padding: 40px 30px 30px;
+        }
+
+        .plan-title {
+            font-size: 22px;
+            font-weight: 400;
+            color: #2d2d2d;
+            margin-bottom: 35px;
+            letter-spacing: 0.5px;
+        }
+
+        .price-wrapper {
+            margin-bottom: 8px;
+        }
+
+        .currency {
+            font-size: 22px;
+            font-weight: 300;
+            color: #2d2d2d;
+            vertical-align: top;
+            position: relative;
+            top: 18px;
+        }
+
+        .price {
+            font-size: 70px;
+            font-weight: 300;
+            color: #2d2d2d;
+            line-height: 1;
+        }
+
+        .period {
+            font-size: 13px;
+            color: #888;
+            letter-spacing: 3px;
+            margin-bottom: 30px;
+            font-weight: 500;
+        }
+
+        .description {
+            color: #999;
+            font-size: 15px;
+            line-height: 1.7;
+            margin-bottom: 35px;
+            padding: 0 10px;
+        }
+
+        .choose-plan-btn {
+            display: block;
+            width: 100%;
+            padding: 18px;
+            border: none;
+            color: #fff;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: opacity 0.3s ease;
+        }
+
+        .choose-plan-btn:hover {
+            opacity: 0.9;
+        }
+
+        .btn-blue {
+            background: linear-gradient(to right, #1e90ff, #4169e1);
+        }
+
+        .btn-pink {
+            background: linear-gradient(to right, #ff5f8d, #ff7a59);
+        }
+
+        .row-custom {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 768px) {
+            .pricing-card {
+                margin-bottom: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row row-custom g-4">
+            <div class="col-md-4">
+                <div class="pricing-card">
+                    <div class="card-body-custom">
+                        <h3 class="plan-title">Regular Plan</h3>
+                        <div class="price-wrapper">
+                            <span class="currency">$</span>
+                            <span class="price">39</span>
+                        </div>
+                        <div class="period">YEARLY</div>
+                        <p class="description">
+                            The Master license allows you to customize, store and even host your website using your platform
+                        </p>
+                    </div>
+                    <button class="choose-plan-btn btn-blue">CHOOSE PLAN</button>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="pricing-card">
+                    <div class="card-body-custom">
+                        <h3 class="plan-title">Master Plan</h3>
+                        <div class="price-wrapper">
+                            <span class="currency">$</span>
+                            <span class="price">49</span>
+                        </div>
+                        <div class="period">YEARLY</div>
+                        <p class="description">
+                            The Master license allows you to customize, store and even host your website using your platform
+                        </p>
+                    </div>
+                    <button class="choose-plan-btn btn-pink">CHOOSE PLAN</button>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="pricing-card">
+                    <div class="card-body-custom">
+                        <h3 class="plan-title">Premium Plan</h3>
+                        <div class="price-wrapper">
+                            <span class="currency">$</span>
+                            <span class="price">69</span>
+                        </div>
+                        <div class="period">YEARLY</div>
+                        <p class="description">
+                            The Master license allows you to customize, store and even host your website using your platform
+                        </p>
+                    </div>
+                    <button class="choose-plan-btn btn-blue">CHOOSE PLAN</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

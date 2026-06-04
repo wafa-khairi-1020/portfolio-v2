@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Architecture - We Create Inspiring Spaces</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            display: flex;
+            min-height: 480px;
+        }
+
+        .hero-image {
+            flex: 1;
+            background: url('https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80') center/cover no-repeat;
+            min-height: 480px;
+        }
+
+        .hero-content {
+            flex: 1;
+            background: #fff;
+            padding: 80px 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .hero-content h1 {
+            font-size: 38px;
+            font-weight: 700;
+            color: #1a1a1a;
+            line-height: 1.2;
+            margin-bottom: 25px;
+        }
+
+        .hero-content p {
+            color: #777;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        .contact-btn {
+            background-color: #1e3a5f;
+            color: #fff;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 4px;
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            cursor: pointer;
+            margin-top: 25px;
+            align-self: flex-start;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact-btn:hover {
+            background-color: #15294a;
+        }
+
+        /* Good Fit Section */
+        .good-fit-section {
+            background-color: #1e3a5f;
+            padding: 70px 30px;
+            text-align: center;
+        }
+
+        .good-fit-section h2 {
+            color: #fff;
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 50px;
+        }
+
+        .feature-card {
+            background: #fff;
+            border-radius: 4px;
+            padding: 30px 25px;
+            margin-bottom: 25px;
+            text-align: left;
+            min-height: 180px;
+        }
+
+        .feature-icon {
+            width: 45px;
+            height: 45px;
+            background-color: #f0f0f0;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #1e3a5f;
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        .feature-card h4 {
+            font-size: 13px;
+            font-weight: 700;
+            color: #1a1a1a;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+        }
+
+        .feature-card p {
+            color: #888;
+            font-size: 13px;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1486325212027-8081e485255e?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+            padding: 80px 30px;
+            text-align: center;
+            color: #fff;
+        }
+
+        .contact-section h2 {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .contact-section p {
+            color: #ddd;
+            margin-bottom: 35px;
+            font-size: 14px;
+        }
+
+        .contact-form {
+            max-width: 700px;
+            margin: 0 auto;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .contact-form input {
+            flex: 1;
+            min-width: 180px;
+            padding: 12px 15px;
+            border: none;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        .contact-form .submit-btn {
+            background-color: #1e3a5f;
+            color: #fff;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 4px;
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact-form .submit-btn:hover {
+            background-color: #15294a;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #1e3a5f;
+            padding: 35px 30px;
+            color: #fff;
+        }
+
+        .footer-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .footer-icon {
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+
+        .footer-text strong {
+            display: block;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 4px;
+        }
+
+        .footer-text span {
+            font-size: 12px;
+            color: #ccc;
+            display: block;
+            line-height: 1.5;
+        }
+
+        @media (max-width: 768px) {
+            .hero-section {
+                flex-direction: column;
+            }
+
+            .hero-image {
+                min-height: 300px;
+            }
+
+            .hero-content {
+                padding: 50px 30px;
+            }
+
+            .hero-content h1 {
+                font-size: 30px;
+            }
+
+            .contact-form {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-image"></div>
+        <div class="hero-content">
+            <h1>We create<br>architecture that<br>inspires</h1>
+            <p>Duis aute irure dolor</p>
+            <p>Ut enim ad minim</p>
+            <button class="contact-btn">CONTACT US</button>
+        </div>
+    </section>
+
+    <!-- Good Fit Section -->
+    <section class="good-fit-section">
+        <h2>We are a good fit if...</h2>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-pencil-ruler"></i></div>
+                        <h4>SAMPLE HEADLINE</h4>
+                        <p>You prefer a custom, one true ideas suit fit-all approach and you are passionate about great design.</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-building"></i></div>
+                        <h4>SAMPLE HEADLINE</h4>
+                        <p>You are interested in inspiring effective projects that are delivered on time and need minimal revisions.</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-drafting-compass"></i></div>
+                        <h4>SAMPLE HEADLINE</h4>
+                        <p>You need an expert, strategic minded planning, chartered architecture firm and not just the cheapest provider.</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-home"></i></div>
+                        <h4>SAMPLE HEADLINE</h4>
+                        <p>You want to work with a firm who will fluidly create work and not be involved in your proposed mission.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <h2>Contact Us</h2>
+        <p>Get in touch with us today</p>
+        <form class="contact-form">
+            <input type="text" placeholder="Enter your Name">
+            <input type="email" placeholder="Enter a valid email address">
+            <button type="submit" class="submit-btn">SUBMIT</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container-fluid">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="footer-item">
+                        <div class="footer-icon"><i class="fas fa-phone"></i></div>
+                        <div class="footer-text">
+                            <strong>CALL US</strong>
+                            <span>+1 (234) 567-891</span>
+                            <span>+1 (234) 987-654</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="footer-item">
+                        <div class="footer-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <div class="footer-text">
+                            <strong>LOCATION</strong>
+                            <span>121 Avenue, Avenue New York,</span>
+                            <span>NY 10001</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="footer-item">
+                        <div class="footer-icon"><i class="fas fa-clock"></i></div>
+                        <div class="footer-text">
+                            <strong>HOURS</strong>
+                            <span>Mon - Fri ... 11 am - 9 pm</span>
+                            <span>Sat - Sun ... 10 am - 8 pm</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

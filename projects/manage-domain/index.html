@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manage Domain</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      background-color: #fff;
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      padding: 0;
+      margin: 0;
+    }
+
+    /* ── Top Header Bar ── */
+    .page-header {
+      background-color: #2b2b2b;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 30px;
+    }
+
+    .page-header h4 {
+      color: #fff;
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin: 0;
+    }
+
+    /* ── Filter Buttons ── */
+    .filter-btns {
+      display: flex;
+      gap: 0;
+    }
+
+    .filter-btn {
+      font-size: 0.82rem;
+      font-weight: 600;
+      padding: 7px 20px;
+      border: none;
+      cursor: pointer;
+      color: #fff;
+      border-radius: 0;
+      transition: opacity 0.15s;
+    }
+    .filter-btn:hover { opacity: 0.85; }
+
+    .filter-btn:first-child { border-radius: 4px 0 0 4px; }
+    .filter-btn:last-child  { border-radius: 0 4px 4px 0; }
+
+    .btn-all      { background-color: #17c1e8; }
+    .btn-active   { background-color: #4caf82; }
+    .btn-inactive { background-color: #f4a523; }
+    .btn-expired  { background-color: #e84040; }
+
+    /* ── Table ── */
+    .domain-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .domain-table thead tr {
+      border-bottom: 2px solid #e8e8e8;
+    }
+
+    .domain-table th {
+      padding: 20px 30px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: #333;
+      text-align: left;
+    }
+
+    .domain-table tbody tr {
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    .domain-table tbody tr:last-child {
+      border-bottom: none;
+    }
+
+    .domain-table td {
+      padding: 22px 30px;
+      font-size: 0.88rem;
+      color: #555;
+      vertical-align: middle;
+    }
+
+    /* Row number */
+    .td-num {
+      font-weight: 700;
+      color: #222;
+      width: 50px;
+    }
+
+    /* Domain link */
+    .domain-link {
+      color: #17c1e8;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .domain-link:hover { text-decoration: underline; }
+
+    /* Status badges */
+    .status-badge {
+      display: inline-block;
+      min-width: 100px;
+      padding: 9px 0;
+      border-radius: 5px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: #fff;
+      text-align: center;
+      letter-spacing: 0.3px;
+    }
+
+    .status-active-blue  { background-color: #1a73e8; }
+    .status-inactive-gray { background-color: #7a7a7a; }
+    .status-active-cyan  { background-color: #17c1e8; }
+    .status-expired-red  { background-color: #e84040; }
+    .status-inactive-yellow { background-color: #f4a523; }
+
+    /* Manage button */
+    .btn-manage {
+      background-color: #2e7d52;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 9px 28px;
+      cursor: pointer;
+      letter-spacing: 0.3px;
+      transition: background-color 0.15s;
+    }
+    .btn-manage:hover { background-color: #236040; }
+
+    /* Create On column */
+    .td-create { color: #777; }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="page-header">
+    <h4>Manage Domain</h4>
+    <div class="filter-btns">
+      <button class="filter-btn btn-all">All</button>
+      <button class="filter-btn btn-active">Active</button>
+      <button class="filter-btn btn-inactive">Inactive</button>
+      <button class="filter-btn btn-expired">Expired</button>
+    </div>
+  </div>
+
+  <!-- Table -->
+  <table class="domain-table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Domain</th>
+        <th>Create On</th>
+        <th>Statuse</th>
+        <th>Server Location</th>
+        <th style="text-align:right;">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <!-- Row 1 -->
+      <tr>
+        <td class="td-num">1</td>
+        <td><a href="#" class="domain-link">facilisleo.com</a></td>
+        <td class="td-create">12/8/2025</td>
+        <td><span class="status-badge status-active-blue">active</span></td>
+        <td>Germany</td>
+        <td style="text-align:right;"><button class="btn-manage">manage</button></td>
+      </tr>
+
+      <!-- Row 2 -->
+      <tr>
+        <td class="td-num">2</td>
+        <td><a href="#" class="domain-link">facilisleo.com</a></td>
+        <td class="td-create">12/8/2025</td>
+        <td><span class="status-badge status-inactive-gray">inactive</span></td>
+        <td>Germany</td>
+        <td style="text-align:right;"><button class="btn-manage">manage</button></td>
+      </tr>
+
+      <!-- Row 3 -->
+      <tr>
+        <td class="td-num">3</td>
+        <td><a href="#" class="domain-link">facilisleo.com</a></td>
+        <td class="td-create">12/8/2025</td>
+        <td><span class="status-badge status-active-cyan">active</span></td>
+        <td>Germany</td>
+        <td style="text-align:right;"><button class="btn-manage">manage</button></td>
+      </tr>
+
+      <!-- Row 4 -->
+      <tr>
+        <td class="td-num">4</td>
+        <td><a href="#" class="domain-link">facilisleo.com</a></td>
+        <td class="td-create">12/8/2025</td>
+        <td><span class="status-badge status-expired-red">expired</span></td>
+        <td>Germany</td>
+        <td style="text-align:right;"><button class="btn-manage">manage</button></td>
+      </tr>
+
+      <!-- Row 5 -->
+      <tr>
+        <td class="td-num">5</td>
+        <td><a href="#" class="domain-link">facilisleo.com</a></td>
+        <td class="td-create">12/8/2025</td>
+        <td><span class="status-badge status-inactive-yellow">inactive</span></td>
+        <td>Germany</td>
+        <td style="text-align:right;"><button class="btn-manage">manage</button></td>
+      </tr>
+
+    </tbody>
+  </table>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

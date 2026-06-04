@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wafa Khairi — Portfolio</title>
+  <meta name="description" content="One-page portfolio for Wafa Khairi, a front-end developer in training. Built with HTML, CSS, and Bootstrap 5.">
+
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+  <!-- My styles -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body id="top">
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-md sticky-top site-nav">
+    <div class="container">
+      <a class="navbar-brand" href="#top">
+        <img src="assets/wordmark.svg" alt="Wafa Khairi" height="32">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto align-items-md-center">
+          <li class="nav-item"><a class="nav-link" href="#work">Work</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          <li class="nav-item ms-md-3 mt-2 mt-md-0">
+            <a class="btn btn-primary btn-sm" href="#contact">Say hi</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container">
+        <p class="eyebrow">Portfolio · 2026</p>
+        <h1 class="hero-title">
+          Hi, I'm Wafa<span class="dot">.</span><br>
+          <em>A front-end developer<br>in training.</em>
+        </h1>
+        <p class="lead hero-lead">
+          I build small, accessible websites with HTML, CSS, and Bootstrap.
+          This is what I've made so far.
+        </p>
+        <div class="hero-actions">
+          <a href="#work" class="btn btn-primary">View work <i class="bi bi-arrow-right ms-1"></i></a>
+          <a href="#contact" class="btn btn-outline-dark">Get in touch</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="section">
+      <div class="container">
+        <p class="eyebrow"><span class="num">01</span> About</p>
+        <h2 class="section-title"><em>A short story.</em></h2>
+
+        <div class="row gx-5 gy-4">
+          <div class="col-lg-7">
+            <p>
+              I'm in my first year of web development. I like clean layouts, real
+              content, and code I can read out loud. Right now I'm focused on the
+              fundamentals — semantic HTML, mobile-first CSS, and the bits of
+              Bootstrap that make responsive layout feel calm instead of fiddly.
+            </p>
+            <p>
+              Outside of class I read about design systems, sketch wireframes on
+              paper before I open the editor, and try to write the kind of
+              portfolio I'd want to read — short, honest, and easy to scan.
+            </p>
+            <p>
+              Long term, I want to work on small teams that care about the
+              details: accessible defaults, typography that breathes, and pages
+              that load fast on whatever device you happen to have.
+            </p>
+          </div>
+          <div class="col-lg-5">
+            <dl class="about-meta">
+              <div>
+                <dt>Currently</dt>
+                <dd>Sprint 1 — HTML, CSS, Bootstrap</dd>
+              </div>
+              <div>
+                <dt>Next up</dt>
+                <dd>JavaScript &amp; the DOM</dd>
+              </div>
+              <div>
+                <dt>Available for</dt>
+                <dd>Internships · freelance · remote</dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="section section-alt">
+      <div class="container">
+        <p class="eyebrow"><span class="num">02</span> Skills</p>
+        <h2 class="section-title"><em>What I work with.</em></h2>
+        <p class="lead section-lead">The fundamentals I'm comfortable with today, and the ones I'm reaching for next.</p>
+
+        <div class="skill-group">
+          <h3 class="skill-group-title">Markup &amp; style</h3>
+          <div class="skill-row">
+            <span class="skill-badge"><span class="dot"></span>HTML5</span>
+            <span class="skill-badge"><span class="dot"></span>CSS3</span>
+            <span class="skill-badge"><span class="dot"></span>Bootstrap 5</span>
+            <span class="skill-badge"><span class="dot"></span>Responsive grid</span>
+            <span class="skill-badge"><span class="dot"></span>Flexbox</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <h3 class="skill-group-title">Tooling</h3>
+          <div class="skill-row">
+            <span class="skill-badge">Git</span>
+            <span class="skill-badge">GitHub Pages</span>
+            <span class="skill-badge">VS Code</span>
+            <span class="skill-badge">Figma</span>
+            <span class="skill-badge">Chrome DevTools</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <h3 class="skill-group-title">Practices</h3>
+          <div class="skill-row">
+            <span class="skill-badge">Semantic HTML</span>
+            <span class="skill-badge">Accessibility (AA)</span>
+            <span class="skill-badge">Mobile-first</span>
+            <span class="skill-badge">Validated markup</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <h3 class="skill-group-title">Currently learning</h3>
+          <div class="skill-row">
+            <span class="skill-badge">JavaScript</span>
+            <span class="skill-badge">Fetch &amp; forms</span>
+            <span class="skill-badge">DOM events</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="work" class="section">
+      <div class="container">
+        <p class="eyebrow"><span class="num">03</span> Selected work</p>
+        <h2 class="section-title"><em>Nine things,</em> made over the course.</h2>
+        <p class="lead section-lead">A mix of landing pages, dashboards, hero sections, and UI components. Each one is a real sprint artifact — open the live demo to see it.</p>
+
+        <div class="row g-4">
+
+          <div class="col-md-6 col-lg-4">
+            <article class="project-card">
+              <div class="project-thumb">
+                <img src="images/project-caffe.svg" alt="Caffe coffee shop site thumbnail">
+              </div>
+              <div class="project-body">
+                <h3 class="project-title">Caffe</h3>
+                <p class="project-blurb">A Persian-language coffee shop site with a scroll-aware navbar, menu sections, and on-scroll reveal animations.</p>
+                <div class="project-stack">
+                  <span class="mono-chip">HTML5</span>
+                  <span class="mono-chip">CSS3</span>
+                  <span class="mono-chip">Bootstrap 5</span>
+                  <span class="mono-chip">Alpine.js</span>
+                  <span class="mono-chip">AOS</span>
+                </div>
+                <div class="project-links">
+                  <a href="projects/caffe/index.html">Live demo <i class="bi bi-arrow-up-right"></i></a>
+                  <a href="#">Source <i class="bi bi-github"></i></a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-lg-4">
+            <article class="project-card">
+              <div class="project-thumb">
+                <img src="images/project-wafa.svg" alt="Wafa dashboard thumbnail">
+              </div>
+              <div class="project-body">
+                <h3 class="project-title">Wafa — dashboard</h3>
+                <p class="project-blurb">A bilingual admin dashboard with a collapsible sidebar, RTL layout, and a clean Bootstrap-driven content area.</p>
+                <div class="project-stack">
+                  <span class="mono-chip">HTML5</span>
+                  <span class="mono-chip">CSS3</span>
+                  <span class="mono-chip">Bootstrap 5</span>
+                  <span class="mono-chip">Alpine.js</span>
+                </div>
+                <div class="project-links">
+                  <a href="projects/wafa-dashboard/index.html">Live demo <i class="bi bi-arrow-up-right"></i></a>
+                  <a href="#">Source <i class="bi bi-github"></i></a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-lg-4">
+            <article class="project-card">
+              <div class="project-thumb">
+                <img src="images/project-darkmode.svg" alt="Dark mode countdown thumbnail">
+              </div>
+              <div class="project-body">
+                <h3 class="project-title">Dark mode countdown</h3>
+                <p class="project-blurb">A countdown widget with a light/dark mode toggle — Alpine-powered, Bootstrap-themed, RTL-aware.</p>
+                <div class="project-stack">
+                  <span class="mono-chip">HTML5</span>
+                  <span class="mono-chip">CSS3</span>
+                  <span class="mono-chip">Bootstrap 5</span>
+                  <span class="mono-chip">Alpine.js</span>
+                </div>
+                <div class="project-links">
+                  <a href="projects/dark-mode/index.html">Live demo <i class="bi bi-arrow-up-right"></i></a>
+                  <a href="#">Source <i class="bi bi-github"></i></a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-lg-4">
+            <article class="project-card">
+              <div class="project-thumb">
+                <img src="images/project-arsha.svg" alt="Arsha marketing site thumbnail">
+              </div>
+              <div class="project-body">
+                <h3 class="project-title">Arsha</h3>
+                <p class="project-blurb">A full responsive marketing landing page — hero, services, features, pricing and contact sections, all stitched together with the Bootstrap grid.</p>
+                <div class="project-stack">
+                  <span class="mono-chip">HTML5</span>
+                  <span class="mono-chip">CSS3</span>
+                  <span class="mono-chip">Bootstrap 5</span>
+                  <span class="mono-chip">Font Awesome</span>
+                  <span class="mono-chip">Google Fonts</span>
+                </div>
+                <div class="project-links">
+                  <a href="projects/arsha/index.html">Live demo <i class="bi bi-arrow-up-right"></i></a>
+                  <a href="#">Source <i class="bi bi-github"></i></a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-lg-4">
+            <article class="project-card">
+              <div class="project-thumb">
+                <img src="images/project-architecture.svg" alt="Architecture site thumbnail">
+              </div>
+              <div class="project-body">
+                <h3 class="project-title">Architecture studio site</h3>
+                <p class="project-blurb">Landing page for a fictional architecture firm. Split hero with image + copy, project highlights, and a short contact strip.</p>
+                <div class="project-stack">
+                  <span class="mono-chip">HTML5</span>
+                  <span class="mono-chip">CSS3</span>
+                  <span class="mono-chip">Bootstrap 5</span>
+                  <span class="mono-chip">Font Awesome</span>
+                </div>
+                <div class="project-links">
+                  <a href="projects/architecture-site/index.html">Live demo <i class="bi bi-arrow-up-right"></i></a>
+                  <a href="#">Source <i class="bi bi-github"></i></a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-lg-4">
+            <article class="project-card">
+              <div class="project-thumb">
+                <img src="images/project-soundamp.svg" alt="SoundAMP events page thumbnail">
+              </div>
+              <div class="project-body">
+                <h3 class="project-title">SoundAMP — events</h3>
+                <p class="project-blurb">Events listing page with a card grid, filter chips, and a clean detail layout for each show.</p>
+                <div class="project-stack">
+                  <span class="mono-chip">HTML5</span>
+                  <span class="mono-chip">CSS3</span>
+                  <span class="mono-chip">Bootstrap 5</span>
+                  <span class="mono-chip">Font Awesome</span>
+                </div>
+                <div class="project-links">
+                  <a href="projects/soundamp/index.html">Live demo <i class="bi bi-arrow-up-right"></i></a>
+                  <a href="#">Source <i class="bi bi-github"></i></a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-lg-4">
+            <article class="project-card">
+              <div class="project-thumb">
+                <img src="images/project-praroz.svg" alt="PraRoz hero section thumbnail">
+              </div>
+              <div class="project-body">
+                <h3 class="project-title">PraRoz hero</h3>
+                <p class="project-blurb">A polished hero section for a web design studio — large display type, two-button CTA, and a decorative image block.</p>
+                <div class="project-stack">
+                  <span class="mono-chip">HTML5</span>
+                  <span class="mono-chip">CSS3</span>
+                  <span class="mono-chip">Bootstrap 5</span>
+                  <span class="mono-chip">Font Awesome</span>
+                  <span class="mono-chip">Google Fonts</span>
+                </div>
+                <div class="project-links">
+                  <a href="projects/praroz-hero/index.html">Live demo <i class="bi bi-arrow-up-right"></i></a>
+                  <a href="#">Source <i class="bi bi-github"></i></a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-lg-4">
+            <article class="project-card">
+              <div class="project-thumb">
+                <img src="images/project-pricing.svg" alt="Pricing plans thumbnail">
+              </div>
+              <div class="project-body">
+                <h3 class="project-title">Pricing plans</h3>
+                <p class="project-blurb">Three-tier pricing layout on a dark backdrop — clear hierarchy, highlighted middle plan, and feature lists with icons.</p>
+                <div class="project-stack">
+                  <span class="mono-chip">HTML5</span>
+                  <span class="mono-chip">CSS3</span>
+                  <span class="mono-chip">Bootstrap 5</span>
+                  <span class="mono-chip">Font Awesome</span>
+                </div>
+                <div class="project-links">
+                  <a href="projects/pricing-plans/index.html">Live demo <i class="bi bi-arrow-up-right"></i></a>
+                  <a href="#">Source <i class="bi bi-github"></i></a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-lg-4">
+            <article class="project-card">
+              <div class="project-thumb">
+                <img src="images/project-jsontable.svg" alt="JSON to Bootstrap responsive table thumbnail">
+              </div>
+              <div class="project-body">
+                <h3 class="project-title">JSON &rarr; responsive table</h3>
+                <p class="project-blurb">A clean responsive table component with a dark header, row actions, and a search/options bar — built from JSON-shaped data.</p>
+                <div class="project-stack">
+                  <span class="mono-chip">HTML5</span>
+                  <span class="mono-chip">CSS3</span>
+                  <span class="mono-chip">Bootstrap 5</span>
+                  <span class="mono-chip">Font Awesome</span>
+                </div>
+                <div class="project-links">
+                  <a href="projects/json-table/index.html">Live demo <i class="bi bi-arrow-up-right"></i></a>
+                  <a href="#">Source <i class="bi bi-github"></i></a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section id="education" class="section section-alt">
+      <div class="container">
+        <p class="eyebrow"><span class="num">04</span> Education &amp; experience</p>
+        <h2 class="section-title"><em>How I got here.</em></h2>
+
+        <div class="timeline">
+          <div class="timeline-item row">
+            <div class="col-md-3 timeline-date">2024 — present</div>
+            <div class="col-md-9">
+              <h3 class="timeline-title">Web Development Diploma</h3>
+              <p class="timeline-org">Continuing studies · in progress</p>
+              <p class="timeline-desc">Sprint 1 covered HTML, CSS, and Bootstrap 5. Sprint 2 moves into JavaScript and the DOM. Building one capstone per sprint.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item row">
+            <div class="col-md-3 timeline-date">2023</div>
+            <div class="col-md-9">
+              <h3 class="timeline-title">Foundations in Design</h3>
+              <p class="timeline-org">Self-directed</p>
+              <p class="timeline-desc">Read through Refactoring UI and Practical Typography. Sketched layouts in Figma and rebuilt a handful of marketing pages from scratch.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item row">
+            <div class="col-md-3 timeline-date">2022 — 2023</div>
+            <div class="col-md-9">
+              <h3 class="timeline-title">Customer Support</h3>
+              <p class="timeline-org">Local retail</p>
+              <p class="timeline-desc">Year of customer-facing work. Taught me to write short, useful sentences and to listen before suggesting a fix — habits that carry into UI copy.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section">
+      <div class="container">
+        <p class="eyebrow"><span class="num">05</span> Contact</p>
+        <h2 class="section-title"><em>Say hi.</em></h2>
+        <p class="lead section-lead">The form is the easiest way. Or grab any of the links — I read everything.</p>
+
+        <div class="row gx-5 gy-4">
+          <div class="col-lg-5">
+            <ul class="contact-info list-unstyled">
+              <li>
+                <a class="contact-link" href="mailto:hello@wafakhairie.dev">
+                  <i class="bi bi-envelope"></i> hello@wafakhairie.dev
+                </a>
+              </li>
+              <li>
+                <a class="contact-link" href="https://github.com/wafa-khairie">
+                  <i class="bi bi-github"></i> github.com/wafa-khairie
+                </a>
+              </li>
+              <li>
+                <a class="contact-link" href="https://linkedin.com/in/wafa-khairie">
+                  <i class="bi bi-linkedin"></i> linkedin.com/in/wafa-khairie
+                </a>
+              </li>
+            </ul>
+            <p class="small text-muted mt-3">
+              I usually reply within a day or two. If it's a course-related question,
+              say so — those jump the queue.
+            </p>
+          </div>
+
+          <div class="col-lg-7">
+            <form class="contact-form">
+              <div class="row g-3">
+                <div class="col-sm-6">
+                  <label for="c-name" class="form-label">Name</label>
+                  <input type="text" class="form-control" id="c-name" placeholder="Your name">
+                </div>
+                <div class="col-sm-6">
+                  <label for="c-email" class="form-label">Email</label>
+                  <input type="email" class="form-control" id="c-email" placeholder="you@example.com">
+                  <div class="form-text">I'll only use it to reply.</div>
+                </div>
+                <div class="col-12">
+                  <label for="c-msg" class="form-label">Message</label>
+                  <textarea class="form-control" id="c-msg" rows="5" placeholder="What's on your mind?"></textarea>
+                </div>
+                <div class="col-12">
+                  <button type="submit" class="btn btn-primary">Send message <i class="bi bi-send ms-1"></i></button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container d-flex flex-wrap justify-content-between align-items-center gap-3">
+      <small class="footer-meta">© 2026 Wafa Khairi · Made with HTML, CSS &amp; Bootstrap.</small>
+      <div class="footer-socials">
+        <a href="https://github.com/wafa-khairie" aria-label="GitHub"><i class="bi bi-github"></i></a>
+        <a href="https://linkedin.com/in/wafa-khairie" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+        <a href="mailto:hello@wafakhairie.dev" aria-label="Email"><i class="bi bi-envelope"></i></a>
+      </div>
+      <a class="back-to-top" href="#top">Back to top <i class="bi bi-arrow-up"></i></a>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS (for the navbar toggle only) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

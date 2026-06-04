@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Icon Buttons</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f5f5f5;
+            padding: 30px;
+            font-family: Arial, sans-serif;
+        }
+
+        .icon-btn {
+            display: inline-flex;
+            align-items: center;
+            border: none;
+            border-radius: 4px;
+            color: #fff;
+            font-weight: bold;
+            font-size: 15px;
+            padding: 0;
+            overflow: hidden;
+            margin: 5px 8px 5px 0;
+            min-width: 140px;
+            cursor: pointer;
+        }
+
+        .icon-btn .icon-box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 14px;
+            font-size: 16px;
+        }
+
+        .icon-btn .text-box {
+            flex: 1;
+            text-align: center;
+            padding: 12px 18px;
+        }
+
+        /* Success - Green */
+        .btn-success-custom { background-color: #5cb85c; }
+        .btn-success-custom .icon-box { background-color: #4cae4c; }
+
+        /* Cancel - Red */
+        .btn-cancel { background-color: #d9534f; }
+        .btn-cancel .icon-box { background-color: #c9302c; }
+
+        /* Bookmark - Orange */
+        .btn-bookmark { background-color: #f0ad4e; }
+        .btn-bookmark .icon-box { background-color: #ec971f; }
+
+        /* Camera - Blue */
+        .btn-camera { background-color: #5bc0de; }
+        .btn-camera .icon-box { background-color: #46b8da; }
+
+        /* Left/Right - Gray */
+        .btn-gray {
+            background-color: #ffffff;
+            color: #555;
+            border: 1px solid #ccc;
+        }
+        .btn-gray .icon-box {
+            background-color: #e6e6e6;
+            color: #555;
+        }
+
+        /* Thumbs Up - Green */
+        .btn-thumbs-up { background-color: #5cb85c; }
+        .btn-thumbs-up .icon-box { background-color: #4cae4c; }
+
+        /* Thumbs Down - Red */
+        .btn-thumbs-down { background-color: #d9534f; }
+        .btn-thumbs-down .icon-box { background-color: #c9302c; }
+
+        /* Refresh - Teal */
+        .btn-refresh { background-color: #5bc0de; }
+        .btn-refresh .icon-box { background-color: #46b8da; }
+
+        /* Trash - Red */
+        .btn-trash { background-color: #d9534f; }
+        .btn-trash .icon-box { background-color: #c9302c; }
+
+        /* Info Web - Blue */
+        .btn-info-web { background-color: #5bc0de; }
+        .btn-info-web .icon-box { background-color: #46b8da; }
+
+        .btn-row {
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="btn-row">
+            <button class="icon-btn btn-success-custom">
+                <span class="icon-box"><i class="fas fa-check"></i></span>
+                <span class="text-box">Success</span>
+            </button>
+            <button class="icon-btn btn-cancel">
+                <span class="icon-box"><i class="fas fa-times"></i></span>
+                <span class="text-box">Cancel</span>
+            </button>
+        </div>
+
+        <div class="btn-row">
+            <button class="icon-btn btn-bookmark">
+                <span class="icon-box"><i class="fas fa-bookmark"></i></span>
+                <span class="text-box">Bookmark</span>
+            </button>
+            <button class="icon-btn btn-camera">
+                <span class="icon-box"><i class="fas fa-camera"></i></span>
+                <span class="text-box">Camera</span>
+            </button>
+        </div>
+
+        <div class="btn-row">
+            <button class="icon-btn btn-gray">
+                <span class="icon-box"><i class="fas fa-chevron-left"></i></span>
+                <span class="text-box">Left</span>
+            </button>
+            <button class="icon-btn btn-gray">
+                <span class="icon-box"><i class="fas fa-chevron-right"></i></span>
+                <span class="text-box">Right</span>
+            </button>
+        </div>
+
+        <div class="btn-row">
+            <button class="icon-btn btn-thumbs-up">
+                <span class="icon-box"><i class="fas fa-thumbs-up"></i></span>
+                <span class="text-box">Thumbs Up</span>
+            </button>
+            <button class="icon-btn btn-thumbs-down">
+                <span class="icon-box"><i class="fas fa-thumbs-down"></i></span>
+                <span class="text-box">Thumbs Down</span>
+            </button>
+        </div>
+
+        <div class="btn-row">
+            <button class="icon-btn btn-refresh">
+                <span class="icon-box"><i class="fas fa-sync-alt"></i></span>
+                <span class="text-box">Refresh</span>
+            </button>
+            <button class="icon-btn btn-trash">
+                <span class="icon-box"><i class="fas fa-trash"></i></span>
+                <span class="text-box">Trash</span>
+            </button>
+        </div>
+
+        <div class="btn-row">
+            <button class="icon-btn btn-info-web">
+                <span class="icon-box"><i class="fas fa-info"></i></span>
+                <span class="text-box">Info Web</span>
+            </button>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

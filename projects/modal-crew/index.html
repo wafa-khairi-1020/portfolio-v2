@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Awesome Crew Modal</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #e4e4e4;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* ── Trigger ── */
+    .btn-open {
+      background: #1e90ff;
+      color: #fff;
+      border: none;
+      padding: 14px 38px;
+      font-size: 1rem;
+      font-weight: 700;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .btn-open:hover { background: #0d7ae0; }
+
+    /* ── Modal sizing ── */
+    .modal-dialog { max-width: 860px; }
+
+    .modal-content {
+      border: none;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 24px 70px rgba(0,0,0,0.14);
+    }
+
+    /* ── Crew Card ── */
+    .crew-card {
+      background: #fff;
+      padding: 50px 56px 50px;
+      position: relative;
+    }
+
+    /* Close */
+    .btn-close-custom {
+      position: absolute;
+      top: 16px; right: 18px;
+      background: none;
+      border: none;
+      font-size: 1.1rem;
+      color: #aaa;
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+    .btn-close-custom:hover { color: #333; }
+
+    /* Header row */
+    .crew-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 44px;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .crew-top h2 {
+      font-size: 1.95rem;
+      font-weight: 800;
+      color: #111;
+      margin: 0;
+    }
+
+    /* City toggle */
+    .city-toggle { display: flex; }
+    .city-btn {
+      font-size: 0.88rem;
+      font-weight: 700;
+      padding: 9px 28px;
+      border: 2px solid #1e90ff;
+      cursor: pointer;
+      transition: all 0.18s;
+    }
+    .city-btn.active {
+      background: #1e90ff;
+      color: #fff;
+      border-radius: 8px 0 0 8px;
+    }
+    .city-btn.inactive {
+      background: #fff;
+      color: #1e90ff;
+      border-radius: 0 8px 8px 0;
+      border-left: none;
+    }
+    .city-btn.inactive:hover { background: #eef6ff; }
+
+    /* Grid */
+    .crew-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 38px 50px;
+    }
+
+    /* Member */
+    .crew-member {
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+    }
+
+    .crew-member img {
+      width: 92px;
+      height: 92px;
+      border-radius: 14px;
+      object-fit: cover;
+      object-position: center top;
+      flex-shrink: 0;
+    }
+
+    .crew-info h5 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #111;
+      margin: 0 0 3px;
+    }
+    .crew-role {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: #1e90ff;
+      margin-bottom: 9px;
+    }
+    .crew-desc {
+      font-size: 0.77rem;
+      color: #999;
+      line-height: 1.65;
+      margin: 0;
+    }
+
+    /* Responsive */
+    @media (max-width: 640px) {
+      .crew-card { padding: 36px 24px; }
+      .crew-grid { grid-template-columns: 1fr; }
+      .crew-top h2 { font-size: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Trigger -->
+  <button class="btn-open" data-bs-toggle="modal" data-bs-target="#crewModal">
+    Meet Our Crew
+  </button>
+
+  <!-- ══ Modal ══ -->
+  <div class="modal fade" id="crewModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-body p-0">
+
+          <div class="crew-card">
+            <button class="btn-close-custom" data-bs-dismiss="modal">
+              <i class="fa fa-xmark"></i>
+            </button>
+
+            <!-- Top row -->
+            <div class="crew-top">
+              <h2>Our awesome crew</h2>
+              <div class="city-toggle">
+                <button class="city-btn active" id="btnBerlin">Berlin</button>
+                <button class="city-btn inactive" id="btnDubai">Dubai</button>
+              </div>
+            </div>
+
+            <!-- Members grid -->
+            <div class="crew-grid">
+
+              <div class="crew-member">
+                <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=200&q=80" alt="Dany Monson">
+                <div class="crew-info">
+                  <h5>Dany Monson</h5>
+                  <div class="crew-role">CEO &amp; Founder</div>
+                  <p class="crew-desc">Create screens directly in method or add your images from sketch or sigma. You can even sync designs from your cloud.</p>
+                </div>
+              </div>
+
+              <div class="crew-member">
+                <img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=200&q=80" alt="Baha Moretz">
+                <div class="crew-info">
+                  <h5>Baha Moretz</h5>
+                  <div class="crew-role">Art Director</div>
+                  <p class="crew-desc">Create screens directly in method or add your images from sketch or sigma. You can even sync designs from your cloud.</p>
+                </div>
+              </div>
+
+              <div class="crew-member">
+                <img src="https://images.unsplash.com/photo-1520813792240-56fc4a3765a7?w=200&q=80" alt="Dima Grinchenko">
+                <div class="crew-info">
+                  <h5>Dima Grinchenko</h5>
+                  <div class="crew-role">Front End Developer</div>
+                  <p class="crew-desc">Create screens directly in method or add your images from sketch or sigma. You can even sync designs from your cloud.</p>
+                </div>
+              </div>
+
+              <div class="crew-member">
+                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&q=80" alt="Russel Peter">
+                <div class="crew-info">
+                  <h5>Russel Peter</h5>
+                  <div class="crew-role">Manager</div>
+                  <p class="crew-desc">Create screens directly in method or add your images from sketch or sigma. You can even sync designs from your cloud.</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const btnBerlin = document.getElementById('btnBerlin');
+    const btnDubai  = document.getElementById('btnDubai');
+    btnBerlin.addEventListener('click', () => {
+      btnBerlin.classList.replace('inactive','active');
+      btnDubai.classList.replace('active','inactive');
+    });
+    btnDubai.addEventListener('click', () => {
+      btnDubai.classList.replace('inactive','active');
+      btnBerlin.classList.replace('active','inactive');
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Donut Menu</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+  <style>
+    body {
+      background-color: #dce9f2;
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      padding: 50px 30px;
+    }
+
+    /* ── Grid ── */
+    .donuts-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 50px 24px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    /* ── Card ── */
+    .donut-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 0 8px;
+    }
+
+    /* ── Donut Image ── */
+    .donut-img-wrap {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin: 0 auto 20px;
+      display: block;
+    }
+
+    .donut-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+
+    /* ── Name ── */
+    .donut-name {
+      font-size: 0.78rem;
+      font-weight: 800;
+      color: #e8407a;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 8px;
+      line-height: 1.3;
+    }
+
+    /* ── Description ── */
+    .donut-desc {
+      font-size: 0.78rem;
+      color: #777;
+      line-height: 1.55;
+      margin-bottom: 14px;
+      flex: 1;
+    }
+
+    /* ── Price ── */
+    .donut-price {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #222;
+      margin-bottom: 14px;
+    }
+
+    .donut-price .currency {
+      font-family: 'Arial', sans-serif;
+      font-size: 1rem;
+      color: #222;
+    }
+
+    /* ── Button ── */
+    .btn-cart {
+      background-color: #e8407a;
+      color: #fff;
+      border: none;
+      border-radius: 30px;
+      padding: 9px 26px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+    .btn-cart:hover { background-color: #c73060; }
+  </style>
+</head>
+<body>
+
+  <div class="donuts-grid">
+
+    <!-- 1. КАЛИФОРНИЙСКИЙ ОРЕХ -->
+    <div class="donut-card">
+      <div class="donut-img-wrap">
+        <img src="https://images.unsplash.com/photo-1551024601-bec78aea704b?w=300&h=300&fit=crop&q=80"
+             alt="Калифорнийский орех">
+      </div>
+      <div class="donut-name">Калифорнийский орех</div>
+      <p class="donut-desc">Пончик, покрытый белой глазурью с арахисовыми пелесточками</p>
+      <div class="donut-price">80 <span class="currency">افـ</span></div>
+      <button class="btn-cart">Order Now</button>
+    </div>
+
+    <!-- 2. СНОСОС -->
+    <div class="donut-card">
+      <div class="donut-img-wrap">
+        <img src="https://images.unsplash.com/photo-1583338917451-face2b2f0a88?w=300&h=300&fit=crop&q=80"
+             alt="Сносос">
+      </div>
+      <div class="donut-name">Сносос</div>
+      <p class="donut-desc">Пончик в шоколадной глазури с зефиром и вареной сгущенкой</p>
+      <div class="donut-price">80 <span class="currency">افـ</span></div>
+      <button class="btn-cart">Order Now</button>
+    </div>
+
+    <!-- 3. СНИКЕРСНИ -->
+    <div class="donut-card">
+      <div class="donut-img-wrap">
+        <img src="https://images.unsplash.com/photo-1592417817098-8fd3d9eb14a5?w=300&h=300&fit=crop&q=80"
+             alt="Сникерсни">
+      </div>
+      <div class="donut-name">Сникерсни</div>
+      <p class="donut-desc">Пончик с ванильным кремом в шоколадной глазури, посыпанный арахисом</p>
+      <div class="donut-price">75 <span class="currency">افـ</span></div>
+      <button class="btn-cart">Order Now</button>
+    </div>
+
+    <!-- 4. КЛУБНИЧКА -->
+    <div class="donut-card">
+      <div class="donut-img-wrap">
+        <img src="https://images.unsplash.com/photo-1556913396-7a3c459ef68e?w=300&h=300&fit=crop&q=80"
+             alt="Клубничка">
+      </div>
+      <div class="donut-name">Клубничка</div>
+      <p class="donut-desc">Пончик с клубничной начинкой в ванильной глазури</p>
+      <div class="donut-price">60 <span class="currency">افـ</span></div>
+      <button class="btn-cart">Order Now</button>
+    </div>
+
+    <!-- 5. КАРАМЕЛЬНЫЙ НЁМ -->
+    <div class="donut-card">
+      <div class="donut-img-wrap">
+        <img src="https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?w=300&h=300&fit=crop&q=80"
+             alt="Карамельный нём">
+      </div>
+      <div class="donut-name">Карамельный нём</div>
+      <p class="donut-desc">Карамельный пончик в шоколадной глазури</p>
+      <div class="donut-price">60 <span class="currency">افـ</span></div>
+      <button class="btn-cart">Order Now</button>
+    </div>
+
+    <!-- 6. РАЙСКИЙ ОСТРОВ -->
+    <div class="donut-card">
+      <div class="donut-img-wrap">
+        <img src="https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?w=300&h=300&fit=crop&q=80"
+             alt="Райский остров">
+      </div>
+      <div class="donut-name">Райский остров</div>
+      <p class="donut-desc">Пончик со сливками в белом шоколаде, посыпанный кокосовой стружкой</p>
+      <div class="donut-price">80 <span class="currency">افـ</span></div>
+      <button class="btn-cart">Order Now</button>
+    </div>
+
+    <!-- 7. ПОНЧИЗ -->
+    <div class="donut-card">
+      <div class="donut-img-wrap">
+        <img src="https://images.unsplash.com/photo-1605139238080-ad6ac72c1374?w=300&h=300&fit=crop&q=80"
+             alt="Пончиз">
+      </div>
+      <div class="donut-name">Пончиз</div>
+      <p class="donut-desc">Пончик с кремом ЧИЗ и черной смородиной</p>
+      <div class="donut-price">90 <span class="currency">افـ</span></div>
+      <button class="btn-cart">Order Now</button>
+    </div>
+
+    <!-- 8. МОРКОВНЫЙ ДОНАТ -->
+    <div class="donut-card">
+      <div class="donut-img-wrap">
+        <img src="https://images.unsplash.com/photo-1600350414855-be8b8d5a7b04?w=300&h=300&fit=crop&q=80"
+             alt="Морковный донат">
+      </div>
+      <div class="donut-name">Морковный донат</div>
+      <p class="donut-desc">Морковный пончик с кофейным кремом</p>
+      <div class="donut-price">70 <span class="currency">افـ</span></div>
+      <button class="btn-cart">Order Now</button>
+    </div>
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

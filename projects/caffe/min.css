@@ -1,0 +1,325 @@
+
+@font-face {
+    font-family: "vazir";
+    src: url("vazirmatn-v33.003/fonts/ttf/Vazirmatn-Black.ttf");
+}
+
+body{
+    font-family: "vazir" !important;
+    color: white;
+    overflow-x: hidden;
+     text-decoration: none;
+
+}
+
+/* =======================
+   Navbar
+======================= */
+
+.navbar{
+    z-index: 9999;
+}
+
+.navbar .nav-link,
+.navbar .navbar-brand{
+    color: #fff !important;
+}
+
+.navbar-toggler{
+    border-color: #fff !important;
+}
+
+.navbar-toggler-icon{
+    filter: brightness(0) invert(1);
+}
+
+.header{
+    transition: 0.5s;
+    padding: 20px 0;
+}
+
+/* وقتی اسکرول شد */
+
+.header-scrolled{
+    background-color: rgba(0,0,0,0.85);
+    backdrop-filter: blur(10px);
+    box-shadow: 0px 2px 20px rgb(0 0 0 / 30%);
+}
+
+/* رنگ نوشته ها بعد اسکرول */
+
+.header-scrolled .nav-link,
+.header-scrolled .navbar-brand{
+    color: #fff !important;
+}
+
+/* =======================
+   Utilities
+======================= */
+
+.hover-grow{
+    transition: 0.5s;
+}
+
+.hover-grow:hover{
+    transform: scale(1.05);
+}
+
+/* =======================
+   Text
+======================= */
+
+h1,h2,h3,h4,h5,h6,p{
+    line-height: 1.8 !important;
+}
+
+/* =======================
+   Hero Section
+======================= */
+
+.intro{
+    min-height: 100vh;
+    width: 100%;
+
+    background: url('./assets/images/intro/minimalist-coffee-background-free-photo.jpeg') center center no-repeat;
+    background-size: cover;
+
+    display: flex;
+    align-items: center;
+
+    padding-top: 120px;
+    padding-bottom: 50px;
+}
+
+/* =======================
+   Image
+======================= */
+
+.img-body{
+    width: 500px;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 4%;
+    max-width: 100%;
+    display: block;
+    margin: auto;
+}
+
+/* =======================
+   Mobile
+======================= */
+
+@media(max-width: 992px){
+
+    .header{
+        background-color: rgba(0,0,0,0.8);
+        padding: 10px 0;
+    }
+
+    .navbar-collapse{
+        background-color: rgba(0,0,0,0.9);
+        padding: 15px;
+        border-radius: 10px;
+        margin-top: 10px;
+        text-align: center;
+    }
+
+    .navbar-nav{
+        margin: auto;
+    }
+
+    .nav-item{
+        padding: 8px 0;
+    }
+
+    .intro{
+        text-align: center;
+        padding-top: 150px;
+    }
+
+    .img-body{
+        width: 280px;
+        height: 280px;
+        margin-top: 30px;
+    }
+
+    h3{
+        font-size: 24px;
+    }
+
+    h5{
+        font-size: 16px;
+    }
+
+    .btn{
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+}
+
+.transparent-light-bg{
+    background-color: #ffffff8c;
+    color: black;
+}
+div{
+    color: black;
+}
+/* about */
+.content{
+    background-color:rgba(10, 2, 2, 0.19);
+    padding: 40px;
+
+}
+/* cards */
+ .card-img-top{
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+    }
+     /* <!-- counts --> */
+    .counts i{
+        font-size: 42px;
+    }
+
+    .counts .blue{
+        color: rgb(212, 196, 12);
+    }
+    .counts .orange{
+        color: rgba(214, 77, 32, 0.762);
+    }
+    .counts .green{
+        color: rgb(28, 107, 5);
+    }
+    .counts .red{
+        color: rgb(212, 15, 12);
+    }
+     /* features */
+     .features i {
+        font-size: 44px;
+        color: rgba(42, 14, 14, 0.47);
+
+
+     }
+ /* services  */
+ .services .service-box{
+    box-shadow: 0px 0 30px rgba(42, 14, 14, 0.47);
+    padding: 60px 30px;
+    text-align: center;
+    border-radius: 5px;
+    transition: all .3s;
+}
+
+.services .service-box i{
+    font-size: 36px;
+    padding: 20px;
+    line-height: 0;
+    display: inline-block;
+    border-radius: 4px;
+}
+
+.services .service-box .read-more i{
+    font-size: 18px;
+    padding: 0;
+}
+
+.services .service-box .read-more{
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+}
+
+
+.services .service-box.blue{
+    border-bottom: 3px solid #2db6fa;
+}
+
+.services .service-box.blue .read-more{
+    color: #2db6fa;
+}
+
+.services .service-box.blue i{
+    color: #2db6fa;
+    background-color: #dbf3fe;
+}
+.services .service-box.blue:hover{
+    background-color: #2db6fa;
+    color: white;
+}
+.services .service-box:hover .read-more{
+    color: #ffffff;
+}
+/* .service-box-orange
+ */
+.services .service-box.orange{
+    border-bottom: 3px solid #2dd1fa;
+}
+
+.services .service-box.orange .read-more{
+    color: #2db6fa;
+}
+
+.services .service-box.orange i{
+    color: #fa782d;
+    background-color: #dbf3fe;
+}
+.services .service-box.orange:hover{
+    background-color: #fa9a2d;
+    color: white;
+}
+/* .service-box-green */
+.services .service-box.green{
+    border-bottom: 3px solid #2dd1fa;
+}
+
+.services .service-box.green .read-more{
+    color: #138e57;
+}
+
+.services .service-box.green i{
+    color: #2dfa41;
+    background-color: #dbf3fe;
+}
+.services .service-box.green:hover{
+    background-color: #2dfa71;
+    color: white;
+}
+/* pricing */
+.pricing .card{
+    transition:  all 0.3s;
+}
+.pricing .card:hover{
+    transform: scale(1.1);
+
+}
+.contact{
+    direction: rtl;
+}
+
+.contact .form-control{
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.contact .form-control:focus{
+    border-color: #0d6efd;
+    box-shadow: none;
+}
+
+.contact .shadow-sm{
+    border-radius: 5px;
+}
+
+footer h5{
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+footer h5:hover{
+    color: #0d6efd;
+}
+
+
+

@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pricing Modal</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Raleway', sans-serif;
+      background: #e0e0e0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* ── Trigger ── */
+    .btn-open {
+      background: #3ecfbe;
+      color: #fff;
+      border: none;
+      padding: 14px 38px;
+      font-size: 1rem;
+      font-weight: 700;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .btn-open:hover { background: #2db5a6; }
+
+    /* ── Modal ── */
+    .modal-dialog { max-width: 820px; }
+
+    .modal-content {
+      border: none;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 24px 70px rgba(0,0,0,0.2);
+    }
+
+    /* ── Pricing Wrapper ── */
+    .pricing-wrap {
+      background: #3ecfbe;
+      padding: 50px 40px;
+      position: relative;
+    }
+
+    /* Close btn */
+    .btn-close-modal {
+      position: absolute;
+      top: 14px; right: 16px;
+      background: rgba(255,255,255,0.25);
+      border: none;
+      width: 32px; height: 32px;
+      border-radius: 50%;
+      color: #fff;
+      font-size: 0.9rem;
+      cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      transition: background 0.2s;
+    }
+    .btn-close-modal:hover { background: rgba(255,255,255,0.4); }
+
+    /* ── Cards Row ── */
+    .cards-row {
+      display: flex;
+      gap: 0;
+      align-items: stretch;
+    }
+
+    /* ── Shared Card ── */
+    .price-card {
+      flex: 1;
+      background: #fff;
+      padding: 38px 28px 36px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* Featured (middle) */
+    .price-card.featured {
+      border: 3px solid #222;
+      border-radius: 2px;
+      margin: -6px 0;
+      padding-top: 44px;
+      padding-bottom: 42px;
+      z-index: 1;
+      position: relative;
+    }
+
+    /* Plan name */
+    .plan-name {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #333;
+      margin-bottom: 18px;
+    }
+    .price-card.featured .plan-name { color: #3ecfbe; }
+
+    /* Price */
+    .plan-price {
+      font-size: 3rem;
+      font-weight: 800;
+      color: #222;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .plan-price sup {
+      font-size: 1.3rem;
+      font-weight: 700;
+      vertical-align: super;
+      line-height: 0;
+    }
+    .plan-price sub {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: #888;
+      vertical-align: baseline;
+    }
+    .price-card.featured .plan-price { color: #3ecfbe; }
+    .price-card.featured .plan-price sub { color: #3ecfbe; opacity: 0.7; }
+
+    /* Divider */
+    .plan-divider {
+      width: 100%;
+      border: none;
+      border-top: 1px solid #eee;
+      margin: 22px 0;
+    }
+
+    /* Features */
+    .plan-features {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 28px;
+      width: 100%;
+    }
+    .plan-features li {
+      font-size: 0.82rem;
+      color: #555;
+      padding: 8px 0;
+      border-bottom: 1px solid #f5f5f5;
+      text-align: left;
+    }
+    .plan-features li:last-child { border-bottom: none; }
+    .plan-features li strong { color: #222; font-weight: 700; }
+
+    /* Sign up button */
+    .btn-signup {
+      border: 1.5px solid #3ecfbe;
+      background: transparent;
+      color: #3ecfbe;
+      padding: 10px 34px;
+      border-radius: 4px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.22s;
+      margin-top: auto;
+    }
+    .btn-signup:hover {
+      background: #3ecfbe;
+      color: #fff;
+    }
+    .price-card.featured .btn-signup {
+      background: #3ecfbe;
+      color: #fff;
+      border-color: #3ecfbe;
+    }
+    .price-card.featured .btn-signup:hover {
+      background: #2db5a6;
+      border-color: #2db5a6;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      .cards-row { flex-direction: column; }
+      .price-card.featured { margin: 0; padding: 38px 28px 36px; }
+      .pricing-wrap { padding: 36px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Trigger -->
+  <button class="btn-open" data-bs-toggle="modal" data-bs-target="#pricingModal">
+    View Pricing Plans
+  </button>
+
+  <!-- ══ Modal ══ -->
+  <div class="modal fade" id="pricingModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-body p-0">
+
+          <div class="pricing-wrap">
+            <button class="btn-close-modal" data-bs-dismiss="modal">
+              <i class="fa fa-xmark"></i>
+            </button>
+
+            <div class="cards-row">
+
+              <!-- BASIC -->
+              <div class="price-card">
+                <div class="plan-name">Basic</div>
+                <div class="plan-price"><sup>$</sup>320<sub>/yr</sub></div>
+                <hr class="plan-divider">
+                <ul class="plan-features">
+                  <li>5 Email Accounts</li>
+                  <li>1 Template Style</li>
+                  <li>25 Products Loaded</li>
+                  <li>1 Image per Product</li>
+                  <li><strong>Unlimited</strong> Bandwidth</li>
+                  <li>24/7 Support</li>
+                </ul>
+                <button class="btn-signup">Sign Up</button>
+              </div>
+
+              <!-- EXCLUSIVE (featured) -->
+              <div class="price-card featured">
+                <div class="plan-name">Exclusive</div>
+                <div class="plan-price"><sup>$</sup>630<sub>/yr</sub></div>
+                <hr class="plan-divider">
+                <ul class="plan-features">
+                  <li>15 Email Accounts</li>
+                  <li>3 Template Styles</li>
+                  <li>40 Products Loaded</li>
+                  <li>7 Images per Product</li>
+                  <li><strong>Unlimited</strong> Bandwidth</li>
+                  <li>24/7 Support</li>
+                </ul>
+                <button class="btn-signup">Sign Up</button>
+              </div>
+
+              <!-- PRO -->
+              <div class="price-card">
+                <div class="plan-name">Pro</div>
+                <div class="plan-price"><sup>$</sup>950<sub>/yr</sub></div>
+                <hr class="plan-divider">
+                <ul class="plan-features">
+                  <li>20 Email Accounts</li>
+                  <li>5 Template Styles</li>
+                  <li>50 Products Loaded</li>
+                  <li>10 Images per Product</li>
+                  <li><strong>Unlimited</strong> Bandwidth</li>
+                  <li>24/7 Support</li>
+                </ul>
+                <button class="btn-signup">Sign Up</button>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
