@@ -19,6 +19,8 @@
   --on-accent: #0F0E11;      /* text/icon on top of an amber fill */
   --focus: #E2B447;
   --focus-ring: rgba(226, 180, 71, 0.18);
+  --success: #5BD0A0;        /* status text on dark bg */
+  --error: #F0857B;
   color-scheme: dark;
 }
 
@@ -38,6 +40,8 @@
   --on-accent: #1A181E;
   --focus: #9A6B00;
   --focus-ring: rgba(154, 107, 0, 0.22);
+  --success: #1F8A5B;        /* darker for >=4.5:1 on paper */
+  --error: #C0392B;
   color-scheme: light;
 }
 
@@ -499,6 +503,51 @@ a:hover {
 .contact-form .form-text {
   color: var(--text-muted);
   font-size: 12px;
+}
+
+/* submit loading + status feedback */
+.btn.is-loading {
+  opacity: 0.75;
+  cursor: progress;
+}
+.btn.is-loading .bi-send {
+  display: none;
+}
+.btn.is-loading .btn-label::after {
+  content: "";
+  display: inline-block;
+  width: 0.85em;
+  height: 0.85em;
+  margin-left: 8px;
+  vertical-align: -0.1em;
+  border: 2px solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: btn-spin 600ms linear infinite;
+}
+@keyframes btn-spin {
+  to { transform: rotate(360deg); }
+}
+.form-status {
+  margin: 4px 0 0;
+  font-size: 14px;
+  font-weight: 500;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+.form-status .bi {
+  flex: 0 0 auto;
+  line-height: 1.5;
+}
+.form-status--pending { color: var(--text-secondary); }
+.form-status--success { color: var(--success); }
+.form-status--error { color: var(--error); }
+
+@media (prefers-reduced-motion: reduce) {
+  .btn.is-loading .btn-label::after {
+    animation: none;
+  }
 }
 
 /* footer */
